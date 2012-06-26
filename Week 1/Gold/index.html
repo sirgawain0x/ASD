@@ -122,24 +122,24 @@
 			</div>
 		</div>
 		<div data-role="content">
-			<form action=" " method="post" id="recordcollege">
+			<form action=" " method="post" id="projectForm">
 			<fieldset>
 				<legend>Information</legend>
-				<span class="need">* Fields Required</span>
+				<span class="need"><h5>* Fields Required</h5></span>
 				<ul id="errors"></ul>
 				<ul>
 					<div data-role="fieldcontain">
-					<li><label for="fname">* First Name</label>
+					<li><label for="fname"><h4>* First Name</h4></label>
 						<input type="text" name="fname" id="fname" class="required" placeholder="First Name" onfocus="styleField(&quot;fname&quot;);" onBlur="unstyleField(&quot;fname&quot;);" /></li>
 					</div>
 					<div data-role="fieldcontain">
-					<li><label for="lname">* Last Name</label>
+					<li><label for="lname"><h4>* Last Name</h4></label>
 						<input type="text" name="lname" id="lname" class="required" placeholder="Last Name" onfocus="styleField(&quot;lname&quot;);" onBlur="unstyleField(&quot;lname&quot;);" /></li>
 					</div>
 					<!--<li><label for="pword">* Password:</label><input type="password" id="pword" onfocus="styleField(&quot;pword&quot;);" onBlur="unstyleField(&quot;pword&quot;);"/></li>
 					<li><label for="cpword">* Confirm Password:(Disabled)</label><input type="password" id="cpword" onfocus="styleField(&quot;cpword&quot;);" onBlur="unstyleField(&quot;cpword&quot;);" disabled /></li>-->
 					<div data-role="fieldcontain">
-					<li><label for="email">* Email</label>
+					<li><label for="email"><h4>* Email</h4></label>
 						<input type="email" name="email" id="email" class="required email" onfocus="styleField(&quot;email&quot;);" onBlur="unstyleField(&quot;email&quot;);"/><p>example@email.com</p></li>
 					</div>
 				</ul>
@@ -147,20 +147,20 @@
 			<fieldset>
 				<legend>Questions</legend>
 				<ul>
-					<li id="label">Male or Female?
+					<li id="label"><h4>Male or Female?</h4>
 						<ul>
 							<div data-role="fieldcontain">
 								<fieldset data-role="controlgroup">
 									<li><label for="male">Male</label>
-									<input type="radio" id="male" checked value="male" name="male" /></li>
+									<input type="radio" id="male" checked value="male" name="sex" /></li>
 									<li><label for="female">Female</label>
-									<input type="radio" id="female" name="female" /></li>
+									<input type="radio" id="female" name="sex" /></li>
 								</fieldset>
 							</div>
 						</ul>
 					</li>
 					<div data-role="fieldcontain">
-					<li id="select"><label for="gpaRange">* GPA Range</label>
+					<li id="select"><label for="gpaRange"><h4>* GPA Range</h4></label>
 						<!-- <select id="gpa">
 							<optgroup label="A">
 								<option value="3.5 - 4.0">3.5 - 4.0</option>
@@ -180,19 +180,19 @@
 						</select> -->
 					</li>
 					</div>
-					<li id="label">Campus Size
+					<li id="label"><h4>Campus Size</h4>
 						<ul>
 							<div data-role="fieldcontain">
 								<fieldset data-role="controlgroup">
-									<li><label for="small">Small (5k or less)></label><input type="checkbox" name="small" id="small" /></li>
-									<li><label for="medium">Medium (5k - 15k)></label><input type="checkbox" checked value="Medium" name="medium" id="medium" /></li>
-									<li><label for="large">Large (15k +)></label><input type="checkbox" name="large" id="large" /></li>
+									<li><label for="small">Small (5k or less)></label><input type="checkbox" name="size" id="small" /></li>
+									<li><label for="medium">Medium (5k - 15k)></label><input type="checkbox" checked value="Medium" name="size" id="medium" /></li>
+									<li><label for="large">Large (15k +)></label><input type="checkbox" name="size" id="large" /></li>
 								</fieldset>
 							</div>
 						</ul>
 					</li>
 					<div data-role="fieldcontain">
-					<li><label for="comments" >* What are your career interests?</label><textarea name="comments" id="comments" class="required"></textarea><p>Example: Engineering, Teaching, etc.</p></li>
+					<li><label for="comments" ><h5>* What are your career interests?</h5></label><textarea name="comments" id="comments" class="required"></textarea><p>Example: Engineering, Teaching, etc.</p></li>
 					</div>
 				</ul>
 			</fieldset>
