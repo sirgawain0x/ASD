@@ -130,12 +130,11 @@ function ne (x) {
         */
     };
     function saveData (key) {
-    var id;
         // If there is no key this means this is a brand new item and we need a brand new key
         if(!key){
          
         //Gather up all form filled values and store in object.
-        id   = Math.floor(Math.random()* 10000001);
+        var id   = Math.floor(Math.random()* 10000001);
         }
         //Remove Weird Data that creates keys for file directories
         else if(key === "A-Z" || "a-z")
@@ -252,7 +251,7 @@ function ne (x) {
         var obj = JSON.parse(value);
  
         //show form
-        toggleControls("off");
+        //toggleControls("off");
  
         //Populate the form fields with current localStorage values.
         ne('fname').value = obj.fname[1];
@@ -312,18 +311,6 @@ function ne (x) {
             return false;
         };
     };
-
-/*    $(document).ready(function () {
-        var rcForm = $('#recordcollege');
-        rcForm.validate({
-            invalidHandler: function(form, validator) {},
-            submitHandler: function() {
-                var data = rcForm.serializeArray();
-                parseCollegeForm(data);
-            };
-        });
-*/
-
  
    function validate (data) {
         //Define the elements we want to check
@@ -367,7 +354,7 @@ function ne (x) {
                 messageAry.push(emailError);
         };
  
-        //Gpa Validation
+        //GPA Validation
         if (getGroup.value === "--Choose Your GPA--"){
             var groupError = "Please select your GPA.";
             getGroup.style.border = "1px solid red";
@@ -401,17 +388,6 @@ function ne (x) {
 var gpaRanges = ["--Choose Your GPA--","A: 4.0 - 3.5", "B: 3.4 - 2.5", "C: 2.4 - 1.5", "D: 1.4 - 1.0", "F: 0.9 - 0.0"],
     sexValue,
     sizeValue,
-    autoFillData,
-    getImage,
-    json,
-    makeItemLinks,
-    editItem,
-    deleteItem,
-    displayLink,
-    save,
-    validate,
-    parseCollegeForm,
-    projectForm,
     errMsg = ne('errors');
     
     makeElement();
