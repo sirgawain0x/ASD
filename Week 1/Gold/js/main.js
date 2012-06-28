@@ -26,7 +26,7 @@ var parseProjectForm = function(data)
         console.log(data);
     };
     
-    $(document).ready(function()
+    $(document).bind('pageinit', function()
     {
         var projectForm = $("#projectForm"),
             rcerrorslink = $("#rcerrorslink");
