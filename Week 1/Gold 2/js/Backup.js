@@ -4,7 +4,7 @@
     VFW 1203
 */
  
-// getElementById function
+
 function styleField (name){
          
     var field = document.getElementById(name);
