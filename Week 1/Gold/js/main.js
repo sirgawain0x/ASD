@@ -1,30 +1,50 @@
-/* Gawain Bracy II
-    Week 3
-    05/17/12
-    MiU 1205
+/* Title: My First App (Assignment 1)
+    Created By: Gawain Bracy II
+    Date: 06/28/12
+    ASD 1206
 */
 
+$(document).ready(function(){
+    // Site Code
+    // variable defaults
+    var gpaRanges = ["--Choose Your GPA--","A: 4.0 - 3.5", "B: 3.4 - 2.5", "C: 2.4 - 1.5", "D: 1.4 - 1.0", "F: 0.9 - 0.0"],
+        sexValue,
+        sizeValue,
+        clearLink = $("clear"),
+        parseProjectForm,
+        saveData,
+        clearLocal,
+        getData,
+        displayLink,
+        json,
+        save = $("submit");
+        errMsg = $('errors');
+ 
+    // Submit Link & Submit Click Events
+    displayLink = $("displayLink");
+    displayLink.on("click", getData);
+     
+      
+    clearLink = $("clear");
+    clearLink.on("click", clearLocal);
+ 
+    var save = $("submit");
+    save.on("click", saveData);
 
-// Style field highlight
-function styleField (name){
+        /*function styleField (name){
          
     var field = document.getElementById(name);
-    field.style.backgroundColor = "yellow";
+    field.css.backgroundColor = "yellow";
     return field;
 };
  
 function unstyleField (name){
          
     var field = document.getElementById(name);
-    field.style.backgroundColor = "white";
+    field.css.backgroundColor = "white";
     return field;
 };
-
-var parseProjectForm = function(data)
-    {
-        // uses form data here;
-        console.log(data);
-    };
+*/
     
     $(document).bind('pageinit', function()
     {
@@ -58,91 +78,94 @@ var parseProjectForm = function(data)
         });
     });
 
-// Wait until DOM is ready
-window.addEventListener("DOMContentLoaded", function()
-{
-
-//getElementById function
-function ne (x) {
-    var theElement = document.getElementById(x);
-    return theElement;
-};
-
-
-// Create select field element and populate with options.
-    function makeElement () {
-        var formTag = document.getElementsByTagName("form"), // formTag is an array of all the form tags.
-            selectLi = ne("select"),
-            makeSelect = document.createElement('select');
-            makeSelect.setAttribute("id", "groups");
-        for(var i = 0, j = gpaRanges.length; i < j; i++){
-            var makeOption = document.createElement('option');
-            var optText = gpaRanges[i];
-            makeOption.setAttribute("value",optText);
-            makeOption.innerHTML = optText;
-            makeSelect.appendChild(makeOption);
-        };
-        selectLi.appendChild(makeSelect);
+    parseProjectForm = function(data)
+    {
+        // uses form data here;
+        console.log(data);
     };
-    
 
-//Find Value of selected radio button
+ 
+// Wait until the DOM is ready.
+window.on("DOMContentLoaded", function(){
+ 
+    //getElementById function
+    function $ (x) {
+        //var theElement = document.getElementById(x);
+        var theElement = $(x);
+        return theElement;
+    };
+
+    // Create select field element and populate with options.
+    function makeElement () {
+        //var formTag = document.getElementsByTagName("form"), // formTag is an array of all the form tags.
+        var formTag = $("form"),
+            selectLi = $("select"),
+            makeSelect = $('select');
+            makeSelect.attr("id", "groups");
+        // Populate with Options    
+        for(var i = 0, j = gpaRanges.length; i < j; i++){
+            //Create option for each string in array
+            var makeOption = $('option');
+            var optText = gpaRanges[i];
+            makeOption.attr("value",optText);
+            // Put text somewhere
+            makeOption.html = optText;
+            makeSelect.append(makeOption);
+        };
+        selectLi.append(makeSelect);
+     }; 
+
+     //Find Value of selected radio button
     function getSelectedRadio () {
         var radio = document.forms[0].sex,
             sexValue;
         for (var i = 0; i < radio.length; i++) {
             if (radio[i].checked){
-                sexValue = radio[i].value;
+                sexValue = radio[i].val;
             };
         };
-    };
+     };
 
-//Find Value of selected checkbox
+     //Find Value of selected checkbox
     function getCheckbox () {
         var checkbox = document.forms[0].pop;
         for (var i = 0; i < checkbox.length; i++) {
             if (checkbox[i].checked){
-                sizeValue = checkbox[i].value;
+                sizeValue = checkbox[i].val;
             };
         };
-    };
+     }; 
 
-    function toggleControls(n){
-        /*switch(n){
+     //Turn nav links off / on
+     function toggleControls(n){
+       /* switch(n){
             case "on":
-            ne("form").style.display = "none";
-            ne("clear").style.display = "inline";
-            ne("displayLink").style.display = "none";
-            ne("addNew").style.display = "inline";
+            $("form").css.display = "no$";
+            $("clear").css.display = "inline";
+            $("displayLink").css.display = "none";
+            $("addNew").css.display = "inline";
  
             break;
             case "off":
-            ne("form").style.display = "block";
-            ne("clear").style.display = "inline";
-            ne("displayLink").style.display = "inline";
-            ne("addNew").style.display = "none";
-            ne("items").style.display = "none";
+            $("form").css.display = "block";
+            $("clear").css.display = "inline";
+            $("displayLink").css.display = "inline";
+            $("addNew").css.display = "none";
+            $("items").css.display = "none";
  
             break;
             default:
                 return false;
-        };
-        */
+        };*/
     };
-    function saveData (key) {
+
+  function saveData (key) {
         // If there is no key this means this is a brand new item and we need a brand new key
         if(!key){
          
         //Gather up all form filled values and store in object.
         var id   = Math.floor(Math.random()* 10000001);
-        }
-        //Remove Weird Data that creates keys for file directories
-        else if(key === "A-Z" || "a-z")
-        {
-            //delete weird data and move on
-            localStorage.removeItem(this.key);
-        }
-        else{
+        }else{
             // Set the id to the existing key that we're editing so that it will save over the data
             //The key is the same key that's been passed along from the editSubmit event handler
             //to the validate function, and then passed here, into the storeData function.
@@ -152,65 +175,22 @@ function ne (x) {
         getSelectedRadio();
         getCheckbox();
         var item        = {};
-            item.fname  = ["First Name:", ne('fname').value];
-            item.lname  = ["Last Name:", ne('lname').value];
-            item.email  = ["Email:", ne('email').value];
+            item.fname  = ["First Name:", $('fname').val];
+            item.lname  = ["Last Name:", $('lname').val];
+            item.email  = ["Email:", $('email').val];
             item.sex    = ["Sex:", sexValue];
-            item.group  = ["Group:", ne('groups').value];
+            item.group  = ["Group:", $('groups').val];
             item.pop    = ["Campus Size:", sizeValue];
-            item.interests =["Interests:", ne('comments').value];
+            item.interests =["Interests:", $('comments').val];
              
+ 
         //Save data into local storage; Use stringify to convert object to string.
         localStorage.setItem(id, JSON.stringify(item));
         alert("Information Saved!");
     };
 
-    function getData () {
-        toggleControls("on");
-        if (localStorage.length === 0) {
-            alert("There is no data in Local Storage so default data was added.");
-            autoFillData();
-        };
-        displayLink(localStorage); // build the data to display on the list page
-    };
-        //write data from local storage to browser.
-        var makeDiv = document.createElement('div');
-        makeDiv.setAttribute("id", "items");
-        var makeList = document.createElement('ul');
-        makeDiv.appendChild(makeList);
-        document.body.appendChild(makeDiv);
-        ne("items").style.display = "block";
-        for (var i = 0, ls = localStorage.length; i < ls; i++) {
-            var makeli = document.createElement('li');
-            var linksli = document.createElement('li');
-            makeList.appendChild(makeli);
-            var key = localStorage.key(i);
-            var value = localStorage.getItem(key);
-            //convert string from local storage value back to an object by using JSON.parse()
-            var obj = JSON.parse(value);
-            var makeSubList = document.createElement('ul');
-            makeli.appendChild(makeSubList);
-            getImage(obj.group[1], makeSubList);
-            for(var b in obj){
-                var makeSubli = document.createElement('li');
-                makeSubList.appendChild(makeSubli);
-                var optSubText = obj[b][0] + " " + obj[b][1];
-                makeSubli.innerHTML = optSubText;
-                makeSubList.appendChild(linksli);
-            };
-            makeItemLinks(localStorage.key(i), linksli ); // Create our edit and delete links/buttons for each item in local storage.
-        };
-    // get the image for the right category being displayed
-    function getImage (iconName, makeSubList) {
-        var imageLi = document.createElement('li');
-        makeSubList.appendChild(imageLi);
-        var newImg = document.createElement('img');
-        var setSrc = newImg.setAttribute('src', "images/icons"+ iconName +".png");
-        imageLi.appendChild(newImg);
-      
-     };
-     //Auto Populate Local Storage
-     function autoFillData () {
+    //Auto Populate Local Storage
+    function autoFillData () {
         // The actual actual JSON OBJECT data required for this to work is coming from out JSON. js file which is loaded to out HTML page.
         // Store the JSON Object into local storage.
         for(var c in json){
@@ -218,77 +198,223 @@ function ne (x) {
             localStorage.setItem(id, JSON.stringify(json[c]));
         };
     };
+
+     function getData () {
+        toggleControls("on");
+        if (localStorage.length === 0) {
+            alert("There is no data in Local Storage so default data was added.");
+            autoFillData();
+        };
+        //write data from local storage to browser.
+       
+       /* var makeDiv = document.createElement('div');
+        makeDiv.attr("id", "items");
+        makeDiv.attr("data-role", "content");
+        makeDiv.attr("data-theme", "d");
+       */ 
+        $('<div id="items" data-role="content" data-theme="d"');
+
+        /*var makeDivPrimary = document.createElement("div");
+            makeDivPrimary.attr("class", "content-primary");
+        */
+        $('<div class="content-primary">');
+
+        var makeList = document.createElement('ul');
+            makeList.attr("id", "one");
+            makeList.attr("data-role", "listview");
+            makeList.attr("data-filter", "true");
+            makeList.attr("data-inset", "true");
+            //$('#items').listview('refresh');  
+            //makeList.listview("refresh");
+        $('<ul id="one" data-role="list-view" data-filter="true" data-inset="true"');
+
+        /*makeDiv.append(makeDivPrimary);
+        makeDiv.append(makeList);
+        document.body.append(makeDiv);
+        $("items").css.display = "block";
+        */
+
+        for (var i = 0, ls = localStorage.length; i < ls; i++) {
+
+         var makeli = document.createElement('li');
+                makeli.attr("id", "two");
+               
+                $('<li id="two">');
+                
+         var linksLi = document.createElement('li');
+                linksLi.attr("id", "three");
+               
+                $('<div id="three">').appendTo('#two');
+                
+                //makeList.append(makeli);
+
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            //convert string from local storage value back to an object by using JSON.parse()
+            var obj = JSON.parse(value);
+           var makeSubList = document.createElement('a');
+            makeSubList.attr("href", "#");
+            makeSubList.attr("id", "four");
+
+            makeli.append(makeSubList);
+           
+            $('<a href="#" id="four"></a>').appendTo("#three");
+            
+            getImage(obj.group[1], makeSubList);
+
+            $('<p id="five"></p>').appendTo("#four");
+
+            for(var b in obj){
+
+
+               var makeSubli = document.createElement('li');
+                makeSubList.append(makeSubli);
+               
+               // var optSubText = obj[b][0] + " " + obj[b][1];
+            var optSubText = obj[n][1];
+                makeSubli.html = optSubText;
+                makeSubList.append(linksLi);
+            };
+            makeItemLinks(localStorage.key(i), linksLi); // Create our edit and delete links/buttons for each item in local storage.
+        };
+     }; 
+
+     // get the image for the right category being displayed
+     function getImage (iconName, makeSubList) {
+        /*var imageLi = document.createElement('li');
+        makeSubList.append(imageLi);
+        */
+
+        $('<div id="six" align="left"></div>').appendTo("#five");
+
+        /*
+        var newImg = document.createElement('img');
+        var setSrc = newImg.attr('src', "images/icons"+ iconName +".png");
+        imageLi.append(newImg);
+        */
+        $('<img src="images/+iconName+.jpg" class="projectIconAlign">')
+                .appendto("#six");
       
-    //Make Item Links
-    //Create the edit and delete links for each stored item when displayed.
-    function makeItemLinks (key, linksli) {
+     };
+
+     //Make Item Links
+     //Create the edit and delete links for each stored item when displayed.
+     function makeItemLinks (key, linksli) {
         //Edit single item link
-        var editLink = document.createElement("a");
+       /* var editLink = document.createElement("a");
             editLink.href = '#';
         editLink.key = key;
         var editText = "Edit Information";
-        editLink.addEventListener("click", editItem);
-        editLink.innerHTML = editText;
-        linksli.appendChild(editLink);
- 
+        editLink.on("click", editItem);
+        editLink.html = editText;
+        linksli.append(editLink);
+        */
+
         //Add line break
         var breakTag = document.createElement('br');
-        linksli.appendChild(breakTag);
+        linksli.append(breakTag);
  
-        var deleteLink = document.createElement('a');
+       /* var deleteLink = document.createElement('a');
             deleteLink.href = '#';
         deleteLink.key = key;
         var deleteText = "Delete Information";
-        deleteLink.addEventListener("click", deleteItem);
-        deleteLink.innerHTML = "Delete Text";
-        linksli.appendChild(deleteLink);
- 
-    };
- 
-    function editItem () {
+        deleteLink.on("click", deleteItem);
+        deleteLink.html = "Delete Text";
+        linksli.append(deleteLink);
+     };
+     */
+     /*
+      function editItem () {
         //Grab data from our item from local storage
         var value = localStorage.getItem(this.key);
         var obj = JSON.parse(value);
  
         //show form
-        //toggleControls("off");
+        toggleControls("off");
  
         //Populate the form fields with current localStorage values.
-        ne('fname').value = obj.fname[1];
-        ne('lname').value = obj.lname[1];
-        ne('email').value = obj.email[1];
+        $('fname').val = obj.fname[1];
+        $('lname').val = obj.lname[1];
+        $('email').val = obj.email[1];
         var radios = document.forms[0].sex;
         for(var i = 0; i < radios.length; i++){
-            if (radios[i].value == "male" && obj.sex[1] == "male"){
-                radios[i].setAttribute("checked", "checked");
-            }else if(radios[i].value == "female" && obj.sex[1] == "female"){
-                radios[i].setAttribute("checked", "checked");
+            if (radios[i].val == "male" && obj.sex[1] == "male"){
+                radios[i].attr("checked", "checked");
+            }else if(radios[i].val == "female" && obj.sex[1] == "female"){
+                radios[i].attr("checked", "checked");
             };
         };
-        ne('groups').value = obj.group[1];
+        $('groups').val = obj.group[1];
  
         var check = document.forms[0].pop;
         for (var a = 0, c = check.length; i < c; i++) {
-            if(check[i].value == "Small" && obj.pop[1] == "Small") {
-                ne('small').setAttribute("checked", "checked");
-            }else if(check[i].value == "Medium" && obj.pop[1] == "Medium") {
-                ne('medium').setAttribute("checked", "checked");
-            }else if(check[i].value == "Large" && obj.pop[1] == "Large") {
-                ne('large').setAttribute("checked", "checked");
+            if(check[i].val == "Small" && obj.pop[1] == "Small") {
+                $('small').attr("checked", "checked");
+            }else if(check[i].val == "Medium" && obj.pop[1] == "Medium") {
+                $('medium').attr("checked", "checked");
+            }else if(check[i].val == "Large" && obj.pop[1] == "Large") {
+                $('large').attr("checked", "checked");
             };
         };
-        ne('comments').value = obj.interests[1];
+        */
+
+        $('comments').val = obj.interests[1];
          // Remove the initial listener from the input 'submit' button.
         save.removeEventListener('click', saveData);
  
         // Change submit button value to edit button
-        ne('submit').value = "Edit Information";
-        var editSubmit = ne('submit');
+        $('submit').val = "Edit Information";
+        var editSubmit = $('submit');
         //Save the key value established in this function as a property of the editSumbit event
         //so we can use that value when we save the data we edited.
-        editSubmit.addEventListener("click", validate);
+        editSubmit.on("click", validate);
         editSubmit.key = this.key;
-    };
+     };
+
+     function editItem () {
+        //Grab data from our item from local storage
+        var value = localStorage.getItem(this.key);
+        var obj = JSON.parse(value);
+ 
+        //show form
+        toggleControls("off");
+ 
+        //Populate the form fields with current localStorage values.
+        $('fname').val = obj.fname[1];
+        $('lname').val = obj.lname[1];
+        $('email').val = obj.email[1];
+        var radios = document.forms[0].sex;
+        for(var i = 0; i < radios.length; i++){
+            if (radios[i].val == "male" && obj.sex[1] == "male"){
+                radios[i].attr("checked", "checked");
+            }else if(radios[i].val == "female" && obj.sex[1] == "female"){
+                radios[i].attr("checked", "checked");
+            };
+        };
+        $('groups').val = obj.group[1];
+ 
+        var check = document.forms[0].pop;
+        for (var a = 0, c = check.length; i < c; i++) {
+            if(check[i].val == "Small" && obj.pop[1] == "Small") {
+                $('small').attr("checked", "checked");
+            }else if(check[i].val == "Medium" && obj.pop[1] == "Medium") {
+                $('medium').attr("checked", "checked");
+            }else if(check[i].val == "Large" && obj.pop[1] == "Large") {
+                $('large').attr("checked", "checked");
+            };
+        };
+        $('comments').val = obj.interests[1];
+         // Remove the initial listener from the input 'submit' button.
+        save.removeEventListener('click', saveData);
+ 
+        // Change submit button value to edit button
+        $('submit').val = "Edit Information";
+        var editSubmit = $('submit');
+        //Save the key value established in this function as a property of the editSumbit event
+        //so we can use that value when we save the data we edited.
+        editSubmit.on("click", validate);
+        editSubmit.key = this.key;
+     };
  
     function deleteItem () {
         var ask = confirm("Are you sure you want to delete thins information?");
@@ -301,7 +427,7 @@ function ne (x) {
         };
     };
  
-    function clearLocal () {
+     function clearLocal () {
         if (localStorage.length === 0){
             alert("There is no data to clear.");
         }else{
@@ -310,70 +436,70 @@ function ne (x) {
             window.location.reload();
             return false;
         };
-    };
+     };
  
-   function validate (data) {
+     function validate (data) {
         //Define the elements we want to check
-        var getFname = ne('fname');
-        var getLname = ne('lname');
-        var getEmail = ne('email');
-        var getGroup = ne('groups');
-        var getInterests = ne('comments');
+        var getFname = $('fname');
+        var getLname = $('lname');
+        var getEmail = $('email');
+        var getGroup = $('groups');
+        var getInterests = $('comments');
  
         // Reset error messages
-        errMsg.innerHTML = " ";
-        getFname.style.border = "1px solid black";
-        getLname.style.border = "1px solid black";
-        getEmail.style.border = "1px solid black";
-        getGroup.style.border = "1px solid black";
-        getInterests.style.border = "1px solid black";
+        errMsg.html = " ";
+        getFname.css.border = "1px solid black";
+        getLname.css.border = "1px solid black";
+        getEmail.css.border = "1px solid black";
+        getGroup.css.border = "1px solid black";
+        getInterests.css.border = "1px solid black";
          
  
         //Get Error Messages
         var messageAry = [];
          
         // First Name Validation
-        if (getFname.value === ""){
+        if (getFname.val === ""){
             var fNameError = "Please enter a first name.";
-            getFname.style.border = "1px solid red";
+            getFname.css.border = "1px solid red";
             messageAry.push(fNameError);
         };
  
         //Last Name Validation
-        if (getLname.value === ""){
+        if (getLname.val === ""){
             var lNameError = "Please enter a last name.";
-            getLname.style.border = "1px solid red";
+            getLname.css.border = "1px solid red";
             messageAry.push(lNameError);
         };
  
         //Email Validation
         var reg = /^\w+([\.]?\w+)*@\w+([\.]?\w+)*(\.\w{2,3})+$/;
-            if(!(reg.exec(getEmail.value))){
+            if(!(reg.exec(getEmail.val))){
                 var emailError = "Please enter a valid email address.";
-                getEmail.style.border = "1px solid red";
+                getEmail.css.border = "1px solid red";
                 messageAry.push(emailError);
         };
  
-        //GPA Validation
-        if (getGroup.value === "--Choose Your GPA--"){
+        //Gpa Validation
+        if (getGroup.val === "--Choose Your GPA--"){
             var groupError = "Please select your GPA.";
-            getGroup.style.border = "1px solid red";
+            getGroup.css.border = "1px solid red";
             messageAry.push(groupError);
         };
          
         //Interests Validation
-        if (getInterests.value === ""){
+        if (getInterests.val === ""){
             var interestsError = "Please type your intrest(s).";
-            getInterests.style.border = "1px solid red";
+            getInterests.css.border = "1px solid red";
             messageAry.push(interestsError);
         };
-
+ 
         // If there are errors display them on screen
         if(messageAry.length >= 1){
             for (var i = 0, j = messageAry.length; i < j; i++) {
                 var txt = document.createElement('li');
-                txt.innerHTML = messageAry[i];
-                errMsg.appendChild(txt);
+                txt.html = messageAry[i];
+                errMsg.append(txt);
             };
             data.preventDefault();
             return false;
@@ -384,24 +510,10 @@ function ne (x) {
  
         };
     };
-    // variable defaults
-var gpaRanges = ["--Choose Your GPA--","A: 4.0 - 3.5", "B: 3.4 - 2.5", "C: 2.4 - 1.5", "D: 1.4 - 1.0", "F: 0.9 - 0.0"],
-    sexValue,
-    sizeValue,
-    errMsg = ne('errors');
-    
-    makeElement();
-
-    // Submit Link & Submit Click Events
-    var displayLink = ne("displayLink");
-    displayLink.addEventListener("click", getData);
-
-    var clearLink = ne("clear");
-    clearLink.addEventListener("click", clearLocal);
-
-    var save = ne("submit");
-    save.addEventListener("click", saveData);
+ 
+   makeElement();
 });
+
 
 
 
