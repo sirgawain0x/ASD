@@ -57,7 +57,7 @@ function unstyleField (name){
             invalidHandler: function(form, validator)
             {
                 //error messages
-                rcerrorslink.click();
+                rcerrorslink.bind();
                 var html = " ";
                 for(var key in validator.submitted){
                     var label = $('label[for^="'+ key +'"]').not('[generated]');
