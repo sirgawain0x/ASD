@@ -17,7 +17,8 @@ $(document).ready(function(){
         getData,
         displayLink,
         json,
-        save = $("submit");
+        getImage,
+        save = $("submit"),
         errMsg = $('errors');
  
     // Submit Link & Submit Click Events
@@ -28,7 +29,7 @@ $(document).ready(function(){
     clearLink = $("clear");
     clearLink.on("click", clearLocal);
  
-    var save = $("submit");
+    //var save = $("submit");
     save.on("click", saveData);
 
         /*function styleField (name){
@@ -513,7 +514,6 @@ window.on("DOMContentLoaded", function(){
  
    makeElement();
 });
-
 
 
 
