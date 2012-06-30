@@ -6,15 +6,47 @@
 
 $(document).ready(function(){
     // Site Code
+    
+     $(document).bind('pageinit', function()
+    {
+        var projectForm = $("#projectForm"),
+            rcerrorslink = $("#rcerrorslink");
+        projectForm.validate(
+        {
+        //options to change behavior of validator
+            invalidHandler: function(form, validator)
+            {
+                //error messages
+                rcerrorslink.bind();
+                var html = " ";
+                for(var key in validator.submitted){
+                    var label = $('label[for^="'+ key +'"]').not('[generated]');
+                    var legend = label.closest('fieldset').find('.ui-controlgroup-label');
+                    var fieldName = legend.legnth ? legend.text() : label.text();
+                    html += "<li>" + fieldName + "</li>";
+                };
+                $("#recordcollegeerrors ul").html(html);
+            },
+            submitHandler: function()
+            {
+                //when valid form is submitted
+                //store all data
+                //target form
+                var data = projectForm.serializeArray();
+                //call function & pass data in
+                parseProjectForm(data);
+            }
+        });
+    });
     // variable defaults
     var gpaRanges = ["--Choose Your GPA--","A: 4.0 - 3.5", "B: 3.4 - 2.5", "C: 2.4 - 1.5", "D: 1.4 - 1.0", "F: 0.9 - 0.0"],
         sexValue,
         sizeValue,
         clearLink = $("clear"),
         parseProjectForm,
-        saveData,
         clearLocal,
         getData,
+        saveData,
         displayLink,
         json,
         getImage,
@@ -47,37 +79,7 @@ function unstyleField (name){
 };
 */
     
-    $(document).bind('pageinit', function()
-    {
-        var projectForm = $("#projectForm"),
-            rcerrorslink = $("#rcerrorslink");
-        projectForm.validate(
-        {
-        //options to change behavior of validator
-            invalidHandler: function(form, validator)
-            {
-                //error messages
-                rcerrorslink.bind();
-                var html = " ";
-                for(var key in validator.submitted){
-                    var label = $('label[for^="'+ key +'"]').not('[generated]');
-                    var legend = label.closest('fieldset').find('.ui-controlgroup-label');
-                    var fieldName = legend.legnth ? legend.text() : label.text();
-                    html += "<li>" + fieldName + "</li>";
-                };
-                $("#recordcollegeerrors ul").html(html);
-            },
-            submitHandler: function()
-            {
-                //when valid form is submitted
-                //store all data
-                //target form
-                var data = projectForm.serializeArray();
-                //call function & pass data in
-                parseProjectForm(data);
-            }
-        });
-    });
+   
 
     parseProjectForm = function(data)
     {
@@ -90,11 +92,12 @@ function unstyleField (name){
 //window.on("DOMContentLoaded", function(){
  
     //getElementById function
-    function $ (x) {
+    /*function $(x) {
         //var theElement = document.getElementById(x);
         var theElement = $(x);
         return theElement;
     };
+    */
 
     // Create select field element and populate with options.
     function makeElement () {
@@ -105,9 +108,9 @@ function unstyleField (name){
                 .attr('data-native-menu', 'false')
                 .appendTo('#select');
             //populate with options
-            for(var i=0, j=projectType.length; i<j; i++) 
+            for(var i=0, j=gpaRanges.length; i<j; i++) 
             {
-                var optText = projectType[i];
+                var optText = gpaRanges[i];
                 $('<option></option>')
                     .attr('value', optText)
                     .attr('data-theme', 'b')
@@ -164,7 +167,7 @@ function unstyleField (name){
         };*/
     };
 
-  function saveData (key) {
+function saveData (key) {
         // If there is no key this means this is a brand new item and we need a brand new key
         if(!key){
          
@@ -174,7 +177,7 @@ function unstyleField (name){
             // Set the id to the existing key that we're editing so that it will save over the data
             //The key is the same key that's been passed along from the editSubmit event handler
             //to the validate function, and then passed here, into the storeData function.
-            var id = key;
+            id = key;
         };
         //Object properties contain array with the form label and input value.
         getSelectedRadio();
@@ -203,7 +206,7 @@ function unstyleField (name){
             localStorage.setItem(id, JSON.stringify(json[c]));
         };
         $('#getProjectData').hide();
-            getProjectJSON();
+            json();
     };
 
      function getData () {
@@ -489,7 +492,6 @@ function unstyleField (name){
 
    makeElement();
 });
-
 
 
 
