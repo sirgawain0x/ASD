@@ -87,7 +87,7 @@ function unstyleField (name){
 
  
 // Wait until the DOM is ready.
-window.on("DOMContentLoaded", function(){
+//window.on("DOMContentLoaded", function(){
  
     //getElementById function
     function $ (x) {
@@ -99,22 +99,26 @@ window.on("DOMContentLoaded", function(){
     // Create select field element and populate with options.
     function makeElement () {
         //var formTag = document.getElementsByTagName("form"), // formTag is an array of all the form tags.
-        var formTag = $("form"),
-            selectLi = $("select"),
-            makeSelect = $('select');
-            makeSelect.attr("id", "groups");
-        // Populate with Options    
-        for(var i = 0, j = gpaRanges.length; i < j; i++){
-            //Create option for each string in array
-            var makeOption = $('option');
-            var optText = gpaRanges[i];
-            makeOption.attr("value",optText);
-            // Put text somewhere
-            makeOption.html = optText;
-            makeSelect.append(makeOption);
-        };
-        selectLi.append(makeSelect);
-     }; 
+        $('<select></select>')
+                .attr('id', 'groups')
+                .attr('data-theme', 'b')
+                .attr('data-native-menu', 'false')
+                .appendTo('#select');
+            //populate with options
+            for(var i=0, j=projectType.length; i<j; i++) 
+            {
+                var optText = projectType[i];
+                $('<option></option>')
+                    .attr('value', optText)
+                    .attr('data-theme', 'b')
+                    .appendTo('select #groups');
+                $('#groups option:last-child')
+                    .html(optText);
+            }
+            var selectType = $('select #groups');
+            selectType.selectmenu();
+            selectType.selectmenu('refresh');
+        }
 
      //Find Value of selected radio button
     function getSelectedRadio () {
@@ -170,7 +174,7 @@ window.on("DOMContentLoaded", function(){
             // Set the id to the existing key that we're editing so that it will save over the data
             //The key is the same key that's been passed along from the editSubmit event handler
             //to the validate function, and then passed here, into the storeData function.
-            id = key;
+            var id = key;
         };
         //Object properties contain array with the form label and input value.
         getSelectedRadio();
@@ -198,56 +202,26 @@ window.on("DOMContentLoaded", function(){
             var id   = Math.floor(Math.random()* 10000001);
             localStorage.setItem(id, JSON.stringify(json[c]));
         };
+        $('#getProjectData').hide();
+            getProjectJSON();
     };
 
      function getData () {
-        toggleControls("on");
+
+        $('#errors').empty();
+            $('#getProjectData').hide();
+
         if (localStorage.length === 0) {
+            $('getProjectData').show();
+            $('#getProjectData-button').button();
+            $('#getProjectData-button').click(function()
             alert("There is no data in Local Storage so default data was added.");
+            
             autoFillData();
+            return false;
         };
-        //write data from local storage to browser.
        
-       /* var makeDiv = document.createElement('div');
-        makeDiv.attr("id", "items");
-        makeDiv.attr("data-role", "content");
-        makeDiv.attr("data-theme", "d");
-       */ 
-        $('<div id="items" data-role="content" data-theme="d"');
-
-        /*var makeDivPrimary = document.createElement("div");
-            makeDivPrimary.attr("class", "content-primary");
-        */
-        $('<div class="content-primary">');
-
-        var makeList = document.createElement('ul');
-            makeList.attr("id", "one");
-            makeList.attr("data-role", "listview");
-            makeList.attr("data-filter", "true");
-            makeList.attr("data-inset", "true");
-            //$('#items').listview('refresh');  
-            //makeList.listview("refresh");
-        $('<ul id="one" data-role="list-view" data-filter="true" data-inset="true"');
-
-        /*makeDiv.append(makeDivPrimary);
-        makeDiv.append(makeList);
-        document.body.append(makeDiv);
-        $("items").css.display = "block";
-        */
-
         for (var i = 0, ls = localStorage.length; i < ls; i++) {
-
-         var makeli = document.createElement('li');
-                makeli.attr("id", "two");
-               
-                $('<li id="two">');
-                
-         var linksLi = document.createElement('li');
-                linksLi.attr("id", "three");
-               
-                $('<div id="three">').appendTo('#two');
-                
-                //makeList.append(makeli);
 
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
@@ -259,17 +233,16 @@ window.on("DOMContentLoaded", function(){
 
             makeli.append(makeSubList);
            
-            $('<a href="#" id="four"></a>').appendTo("#three");
-            
-            getImage(obj.group[1], makeSubList);
-
-            $('<p id="five"></p>').appendTo("#four");
+            $('<li></li>').addClass('project' + key)
+                    .attr('data-theme','b')
+                    .appendTo('#items');
+                
+                $('<a></a>').addClass('anchor' + key)
+                    .attr('rel','external')
+                    .attr('href', '?projectId=' + key)
+                    .appendTo('#items li.' + key);
 
             for(var b in obj){
-
-
-               var makeSubli = document.createElement('li');
-                makeSubList.append(makeSubli);
                
                // var optSubText = obj[b][0] + " " + obj[b][1];
             var optSubText = obj[n][1];
@@ -282,19 +255,14 @@ window.on("DOMContentLoaded", function(){
 
      // get the image for the right category being displayed
      function getImage (iconName, makeSubList) {
-        /*var imageLi = document.createElement('li');
-        makeSubList.append(imageLi);
-        */
-
-        $('<div id="six" align="left"></div>').appendTo("#five");
-
-        /*
-        var newImg = document.createElement('img');
-        var setSrc = newImg.attr('src', "images/icons"+ iconName +".png");
-        imageLi.append(newImg);
-        */
-        $('<img src="images/+iconName+.jpg" class="projectIconAlign">')
-                .appendto("#six");
+        var imageLi = $('div')
+                .attr('align', 'left')  
+                .append('#items li a' + key);
+            
+            var newImg = $('img')
+                .attr("src", "images/" + iconName + ".png")
+                .attr('class', 'projectIconAlign');
+                .append('#imageLi' + key);
       
      };
 
@@ -302,29 +270,28 @@ window.on("DOMContentLoaded", function(){
      //Create the edit and delete links for each stored item when displayed.
      function makeItemLinks (key, linksli) {
         //Edit single item link
-       /* var editLink = document.createElement("a");
+        var editLink = document.createElement("a");
             editLink.href = '#';
         editLink.key = key;
         var editText = "Edit Information";
         editLink.on("click", editItem);
         editLink.html = editText;
         linksli.append(editLink);
-        */
+    
 
         //Add line break
         var breakTag = document.createElement('br');
         linksli.append(breakTag);
  
-       /* var deleteLink = document.createElement('a');
+       var deleteLink = document.createElement('a');
             deleteLink.href = '#';
         deleteLink.key = key;
         var deleteText = "Delete Information";
         deleteLink.on("click", deleteItem);
-        deleteLink.html = "Delete Text";
+        deleteLink.html = "DeleteText";
         linksli.append(deleteLink);
      };
-     */
-     /*
+     
       function editItem () {
         //Grab data from our item from local storage
         var value = localStorage.getItem(this.key);
@@ -357,11 +324,10 @@ window.on("DOMContentLoaded", function(){
                 $('large').attr("checked", "checked");
             };
         };
-        */
 
         $('comments').val = obj.interests[1];
          // Remove the initial listener from the input 'submit' button.
-        save.removeEventListener('click', saveData);
+        $('#submit').unbind('click');
  
         // Change submit button value to edit button
         $('submit').val = "Edit Information";
@@ -510,8 +476,17 @@ window.on("DOMContentLoaded", function(){
             saveData(this.key);
  
         };
-    };
- 
+    
+    $("#delete").click(function()
+        {
+            deleteItem();
+        });
+        
+        $('#clear').click(function()
+        {
+            clearLocal();
+        });
+
    makeElement();
 });
 
