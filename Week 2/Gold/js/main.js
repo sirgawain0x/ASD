@@ -63,19 +63,15 @@ $(document).ready(function() {
     }
 */
 
-    function makeElement () {
-        var formTag = $("form").get(0)tagName, // formTag is an array of all the form tags.
-            selectLi = ne("#select"),
-            makeSelect = $('<select></select>');
-            makeSelect.attr("id", "#groups");
-        for(var i = 0, j = gpaRanges.length; i < j; i++){
-            var makeOption = $('<option><option>');
-            var optText = gpaRanges[i];
-            makeOption.attr(val,text);
-            makeOption.html = text;
-            makeSelect.append(makeOption);
-        };
-        selectLi.append(makeSelect);
-    };
-    makeElement();
+    //obj is the list of option values
+    function obj (){
+        var create = '<select id="test">';
+        for(var i = 0; i < gpaRanges.length;i++)
+        {
+            create += '<option value="'+gpaRanges[i]+'">'+gpaRanges[i]+'</option>';
+        }
+        create += '</select>';
+        $('#select').append(create);
+};
+    obj();
 });
