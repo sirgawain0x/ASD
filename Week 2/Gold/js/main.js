@@ -126,19 +126,74 @@ $(document).ready(function() {
         alert("Information Saved!");
     };
 
-    $("input#submit").click(function() {
+    var submit = $("input#submit").click(function() {
         saveData();
     });
 
     //Auto Populate Local Storage
     function autoFillData () {
-        // The actual actual JSON OBJECT data required for this to work is coming from out JSON. js file which is loaded to out HTML page.
+        // The actual actual JSON OBJECT data required for this to work is coming from out JSON.js file which is loaded to out HTML page.
         // Store the JSON Object into local storage.
         for(var c in json){
             var id   = Math.floor(Math.random()* 10000001);
             localStorage.setItem(id, JSON.stringify(json[c]));
         };
     };
+
+    function getData () {
+        toggleControls("on");
+        if (localStorage.length === 0) {
+            alert("There is no data in Local Storage so default data was added.");
+            autoFillData();
+        };
+        //displayLink(localStorage); // build the data to display on the list page
+        $.mobile.changePage('#displaydata'); // go to page to display list
+    };
+        //write data from local storage to browser.
+        var makeDiv = $('<div></div>');
+        makeDiv.attr("id", "items");
+        makeDiv.attr("data-role", "content");
+        makeDiv.attr("data-theme", "d");
+
+        var makeDivPrimary = $("<div></div>");
+        makeDivPrimary.attr("class", "content-primary");
+
+        var makeList = $('<ul></ul>');
+        makeList.attr("id", "one");
+        makeList.attr("data-role", "listview");
+        makeList.attr("data-filter", "true");
+        makeList.attr("data-inset", "true");
+
+        makeDiv.append(makeList);
+        makeDivPrimary.append(makeList);
+        $.body.append(makeDiv);
+        $("items").style.display = "block";
+        for (var i = 0, ls = localStorage.length; i < ls; i++) {
+            var makeli = document.createElement('li');
+            makeli.attr("id", "two");
+            var linksli = document.createElement('li');
+            linksLi.attr("id", "three");
+            makeList.appendChild(makeli);
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            //convert string from local storage value back to an object by using JSON.parse()
+            var obj = JSON.parse(value);
+            var makeSubList = document.createElement('ul');
+            makeSubList.attr("href", "#");
+            makeSubList.attr("id", "four");
+            
+            makeli.appendChild(makeSubList);
+            
+            getImage(obj.group[1], makeSubList);
+            for(var b in obj){
+                var makeSubli = document.createElement('li');
+                makeSubList.appendChild(makeSubli);
+                var optSubText = obj[b][0] + " " + obj[b][1];
+                makeSubli.innerHTML = optSubText;
+                makeSubList.appendChild(linksli);
+            };
+            makeItemLinks(localStorage.key(i), linksli ); // Create our edit and delete links/buttons for each item in local storage.
+        };
 
     $("#displayLink").click(function(){
         autoFillData();
