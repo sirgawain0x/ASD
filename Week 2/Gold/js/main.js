@@ -113,13 +113,13 @@ $(document).ready(function() {
         getSelectedRadio();
         getCheckbox();
         var item        = {};
-            item.fname  = ["First Name:", $('fname').val];
-            item.lname  = ["Last Name:", $('lname').val];
-            item.email  = ["Email:", $('email').val];
+            item.fname  = ["First Name:", $('fname').val()];
+            item.lname  = ["Last Name:", $('lname').val()];
+            item.email  = ["Email:", $('email').val()];
             item.sex    = ["Sex:", sexValue];
-            item.group  = ["Group:", $('groups').val];
+            item.group  = ["Group:", $('groups').val()];
             item.pop    = ["Campus Size:", sizeValue];
-            item.interests =["Interests:", $('comments').val];
+            item.interests =["Interests:", $('comments').val()];
              
         //Save data into local storage; Use stringify to convert object to string.
         localStorage.setItem(id, JSON.stringify(item));
