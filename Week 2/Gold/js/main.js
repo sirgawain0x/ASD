@@ -7,9 +7,8 @@ $(document).ready(function() {
     $(document).bind('pageinit', function(){
         var projectForm = $("#projectForm"),
             rcerrorslink = $("#rcerrorslink");
-        projectForm.validate(
-        {
-        //options to change behavior of validator
+        projectForm.validate({
+            //options to change behavior of validator
             invalidHandler: function(form, validator){
                 //error messages
                 rcerrorslink.bind();
@@ -22,8 +21,7 @@ $(document).ready(function() {
                 };
                 $("#recordCollegeErrors ul").html(html);
             },
-            submitHandler: function()
-            {
+            submitHandler: function(){
                 //when valid form is submitted
                 //store all data
                 //target form
@@ -232,6 +230,7 @@ $(document).ready(function() {
             deleteItem();
         });
         deleteLink.html = "Delete Text";
+    };
         linksli.append(deleteLink);
  
     
