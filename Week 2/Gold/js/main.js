@@ -172,7 +172,7 @@ $(document).ready(function() {
         makeDiv.append(makeList);
         makeDivPrimary.append(makeList);
         $(document.body).append(makeDiv);
-        $("items").css({"display", "block"});
+        $("#items").css({"display": "block"});
         for (var i = 0, ls = localStorage.length; i < ls; i++) {
             var makeli = $('<li/>');
             makeli.attr("id", "two");
@@ -276,6 +276,7 @@ $(document).ready(function() {
         editSubmit.click(function(){
             validate();
         });
+        
         editSubmit.key = this.key;
     };
 
@@ -311,11 +312,11 @@ $(document).ready(function() {
  
         // Reset error messages
         errMsg.html = " ";
-        getFname.css('border', '1px solid black');
-        getLname.css('border', '1px solid black');
-        getEmail.css('border', '1px solid black');
-        getGroup.css('border', '1px solid black');
-        getInterests.css('border', '1px solid black');
+        getFname.css({'border': '1px solid black'});
+        getLname.css({'border': '1px solid black'});
+        getEmail.css({'border': '1px solid black'});
+        getGroup.css({'border': '1px solid black'});
+        getInterests.css({'border': '1px solid black'});
          
  
         //Get Error Messages
@@ -324,14 +325,14 @@ $(document).ready(function() {
         // First Name Validation
         if (getFname.val === ""){
             var fNameError = "Please enter a first name.";
-            getFname.css('border','1px solid red');
+            getFname.css({'border':'1px solid red'});
             messageAry.push(fNameError);
         };
  
         //Last Name Validation
         if (getLname.val === ""){
             var lNameError = "Please enter a last name.";
-            getLname.css('border','1px solid red');
+            getLname.css({'border':'1px solid red'});
             messageAry.push(lNameError);
         };
  
@@ -339,21 +340,21 @@ $(document).ready(function() {
         var reg = /^\w+([\.]?\w+)*@\w+([\.]?\w+)*(\.\w{2,3})+$/;
             if(!(reg.exec(getEmail.val))){
                 var emailError = "Please enter a valid email address.";
-                getEmail.css('border','1px solid red');
+                getEmail.css({'border':'1px solid red'});
                 messageAry.push(emailError);
         };
  
         //Gpa Validation
         if (getGroup.value === "--Choose Your GPA--"){
             var groupError = "Please select your GPA.";
-            getGroup.css('border','1px solid red');
+            getGroup.css({'border':'1px solid red'});
             messageAry.push(groupError);
         };
          
         //Interests Validation
         if (getInterests.value === ""){
             var interestsError = "Please type your intrest(s).";
-            getInterests.css('border','1px solid red');
+            getInterests.css({'border':'1px solid red'});
             messageAry.push(interestsError);
         };
 
