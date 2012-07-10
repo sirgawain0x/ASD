@@ -72,7 +72,7 @@ $(document).ready(function() {
         var radio = $('#projectForm input.sex');
         for (var i = 0, j = radio.length; i < j; i++) {
             if (radio[i].checked){
-                sexValue = radio[i].val;
+                sexValue = radio[i].value;
             };
         };
     };
@@ -82,7 +82,7 @@ $(document).ready(function() {
         var checkbox = $('#projectForm input.pop');
         for (var i = 0, j = checkbox.length; i < j; i++) {
             if (checkbox[i].checked){
-                sizeValue = checkbox[i].val;
+                sizeValue = checkbox[i].value;
             };
         };
     };
@@ -111,13 +111,13 @@ $(document).ready(function() {
         getSelectedRadio();
         getCheckbox();
         var item        = {};
-            item.fname  = ["First Name:", $('fname').val()];
-            item.lname  = ["Last Name:", $('lname').val()];
-            item.email  = ["Email:", $('email').val()];
+            item.fname  = ["First Name:", $('fname').value];
+            item.lname  = ["Last Name:", $('lname').value];
+            item.email  = ["Email:", $('email').value];
             item.sex    = ["Sex:", sexValue];
-            item.group  = ["Group:", $('groups').val()];
+            item.group  = ["Group:", $('groups').value];
             item.pop    = ["Campus Size:", sizeValue];
-            item.interests =["Interests:", $('comments').val()];
+            item.interests =["Interests:", $('comments').value];
              
         //Save data into local storage; Use stringify to convert object to string.
         localStorage.setItem(id, JSON.stringify(item));
@@ -172,7 +172,7 @@ $(document).ready(function() {
         makeDiv.append(makeList);
         makeDivPrimary.append(makeList);
         $(document.body).append(makeDiv);
-        $("items").css("display", "block");
+        $("items").css({"display", "block"});
         for (var i = 0, ls = localStorage.length; i < ls; i++) {
             var makeli = $('<li/>');
             makeli.attr("id", "two");
@@ -199,10 +199,6 @@ $(document).ready(function() {
             };
             makeItemLinks(localStorage.key(i), linksli ); // Create our edit and delete links/buttons for each item in local storage.
         };
-
-    $("#displayLink").click(function(){
-        autoFillData();
-    });
     
     //Make Item Links
     //Create the edit and delete links for each stored item when displayed.
@@ -250,7 +246,7 @@ $(document).ready(function() {
         for(var i = 0, r = radios.length; i < r; i++){
             if (radios[i].val() == "male" && obj.sex[1] == "male"){
                 radios[i].attr("checked", "checked");
-            }else if(radios[i].val() == "female" && obj.sex[1] == "female"){
+            }else if(radios[i].value == "female" && obj.sex[1] == "female"){
                 radios[i].attr("checked", "checked");
             };
         };
@@ -260,9 +256,9 @@ $(document).ready(function() {
         for (var a = 0, c = check.length; i < c; i++) {
             if(check[i].val == "Small" && obj.pop[1] == "Small") {
                 $('small').attr("checked", "checked");
-            }else if(check[i].val() == "Medium" && obj.pop[1] == "Medium") {
+            }else if(check[i].value == "Medium" && obj.pop[1] == "Medium") {
                 $('medium').attr("checked", "checked");
-            }else if(check[i].val() == "Large" && obj.pop[1] == "Large") {
+            }else if(check[i].value == "Large" && obj.pop[1] == "Large") {
                 $('large').attr("checked", "checked");
             };
         };
