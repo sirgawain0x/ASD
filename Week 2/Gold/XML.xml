@@ -5,180 +5,259 @@
 		<lname>Robinson</lname>
 		<email>m.robinson@aol.com</email>
 		<sex>Male</sex>
-		"group": ["GPA:", "B: 3.4 - 2.5"],
-		"pop": ["Campus Size:", "Small"],
-		"interests": ["Interest(s):", "Welding, Astronaut, Accounting"]
+		<group>
+			<gpa>B: 3.4 - 2.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Small</campusSize>
+		</pop>
+		<interests>Welding, Astronaut, Accounting</interests>
 	</interest1>
 	<interest2>
-	"fname": ["First Name:", "Sandra"],
-	"lname": ["Last Name:", "Williams"],
-	"email": ["Email:", "truthis@gmail.com"],
-	"sex": ["Sex:", "Female"],
-	"group": ["GPA:", "A: 4.0 - 3.5"],
-	"pop": ["Campus Size:", "Large"],
-	"interests": ["Interest(s):", "Teaching, Cinematography, Law"]
-	},
-	"interest3":{
-	"fname": ["First Name:", "Brian"],
-	"lname": ["Last Name:", "Moore"],
-	"email": ["Email:", "teamphilly@me.com"],
-	"sex": ["Sex:", "Male"],
-	"group": ["GPA:", "D: 1.4 - 1.0"],
-	"pop": ["Campus Size:", "Medium"],
-	"interests": ["Interest(s):", "Medical, Business Administration, Game Design"]
-	},
-	"interest4":{
-	"fname": ["First Name:", "Blake"],
-	"lname": ["Last Name:", "Griffin"],
-	"email": ["Email:", "saveme@gmail.com"],
-	"sex": ["Sex:", "Male"],
-	"group": ["GPA:", "C: 2.4 - 1.5"],
-	"pop": ["Campus Size:", "Medium"],
-	"interests": ["Interest(s):", "Law Enforcement, Business Administration, Mobile Development"]
-	},
-	"interest5":{
-						"fname": ["First Name:", "Myra"],
-						"lname": ["Last Name:", "Ray"],
-						"email": ["Email:", "rayoflight@aol.com"],
-						"sex": ["Sex:", "Female"],
-						"group": ["GPA:", "B: 3.4 - 2.5"],
-						"pop": ["Campus Size:", "Large"],
-						"interests": ["Interest(s):", "Business Data Processing"]
-					},
-					"interest6":{
-						"fname": ["First Name:", "Billy"],
-						"lname": ["Last Name:", "Goldstein"],
-						"email": ["Email:", "digforgold@mac.com"],
-						"sex": ["Sex:", "Male"],
-						"group": ["GPA:", "A: 4.0 - 3.5"],
-						"pop": ["Campus Size:", "Large"],
-						"interests": ["Interest(s):", "Computer Engineering"]
-					},
-					"interest7":{
-						"fname": ["First Name:", "Danielle"],
-						"lname": ["Last Name:", "Williams"],
-						"email": ["Email:", "pixiedust@yahoo.com"],
-						"sex": ["Sex:", "Female"],
-						"group": ["GPA:", "A: 4.0 - 3.5"],
-						"pop": ["Campus Size:", "Small"],
-						"interests": ["Interest(s):", "Marketing, Marketing Management"]
-					},
-					"interest8":{
-						"fname": ["First Name:", "Wilbur"],
-						"lname": ["Last Name:", "Meng"],
-						"email": ["Email:", "muse783@netscpae.com"],
-						"sex": ["Sex:", "Male"],
-						"group": ["GPA:", "D: 1.4 - 1.0"],
-						"pop": ["Campus Size:", "Medium"],
-						"interests": ["Interest(s):", "Information Sciences and Systems"]
-					},
-					"interest9":{
-						"fname": ["First Name:", "Simon"],
-						"lname": ["Last Name:", "Villani"],
-						"email": ["Email:", "sim0ntheman@gmail.com"],
-						"sex": ["Sex:", "Male"],
-						"group": ["GPA:", "C: 2.4 - 1.5"],
-						"pop": ["Campus Size:", "Large"],
-						"interests": ["Interest(s):", "Mathematician"]
-					},
-					"interest10":{
-						"fname": ["First Name:", "Seaterra"],
-						"lname": ["Last Name:", "Mandel"],
-						"email": ["Email:", "skyisthelimit@gmail.com"],
-						"sex": ["Sex:", "Female"],
-						"group": ["GPA:", "B: 3.4 - 2.5"],
-						"pop": ["Campus Size:", "Large"],
-						"interests": ["Interest(s):", "Economics, Finance"]
-					},
-					"interest11":{
-						"fname": ["First Name:", "Adrian"],
-						"lname": ["Last Name:", "Kline"],
-						"email": ["Email:", "bigpond@aol.com"],
-						"sex": ["Sex:", "Male"],
-						"group": ["GPA:", "B: 3.4 - 2.5"],
-						"pop": ["Campus Size:", "Medium"],
-						"interests": ["Interest(s):", "Business Administration, Management"]
-					},
-					"interest12":{
-						"fname": ["First Name:", "Sonya"],
-						"lname": ["Last Name:", "McAfee"],
-						"email": ["Email:", "beatclub@bellsouth.net"],
-						"sex": ["Sex:", "Female"],
-						"group": ["GPA:", "A: 4.0 - 3.5"],
-						"pop": ["Campus Size:", "Small"],
-						"interests": ["Interest(s):", "Computer Science"]
-					},
-					"interest13":{
-						"fname": ["First Name:", "Andre"],
-						"lname": ["Last Name:", "Wright"],
-						"email": ["Email:", "wrightbros@penup.com"],
-						"sex": ["Sex:", "Male"],
-						"group": ["GPA:", "D: 1.4 - 1.0"],
-						"pop": ["Campus Size:", "Medium"],
-						"interests": ["Interest(s):", "Electrical Engineering"]
-					},
-					"interest14":{
-						"fname": ["First Name:", "Carl"],
-						"lname": ["Last Name:", "Thomas"],
-						"email": ["Email:", "melodiesfr0mheaven@gmail.com"],
-						"sex": ["Sex:", "Male"],
-						"group": ["GPA:", "C: 2.4 - 1.5"],
-						"pop": ["Campus Size:", "Medium"],
-						"interests": ["Interest(s):", "Mechanical Engineering"]
-					},
-					"interest15":{
-						"fname": ["First Name:", "Melodie"],
-						"lname": ["Last Name:", "Cartwright"],
-						"email": ["Email:", "ladywithattitude@me.com"],
-						"sex": ["Sex:", "Female"],
-						"group": ["GPA:", "B: 3.4 - 2.5"],
-						"pop": ["Campus Size:", "Large"],
-						"interests": ["Interest(s):", "Accounting"]
-					},
-						"interest16":{
-						"fname": ["First Name:", "Abel"],
-						"lname": ["Last Name:", "Cheng"],
-						"email": ["Email:", "oodleofnoodle@mac.com"],
-						"sex": ["Sex:", "Male"],
-						"group": ["GPA:", "A: 4.0 - 3.5"],
-						"pop": ["Campus Size:", "Small"],
-						"interests": ["Interest(s):", "Scientist"]
-					},
-					"interest17":{
-						"fname": ["First Name:", "Kara"],
-						"lname": ["Last Name:", "Corker"],
-						"email": ["Email:", "karacola@verizon.com"],
-						"sex": ["Sex:", "Female"],
-						"group": ["GPA:", "A: 4.0 - 3.5"],
-						"pop": ["Campus Size:", "Small"],
-						"interests": ["Interest(s):", "liberal Arts"]
-					},
-					"interest18":{
-						"fname": ["First Name:", "Wesley"],
-						"lname": ["Last Name:", "Snipes"],
-						"email": ["Email:", "bladeinfinity2025@gmail.com"],
-						"sex": ["Sex:", "Male"],
-						"group": ["GPA:", "D: 1.4 - 1.0"],
-						"pop": ["Campus Size:", "Large"],
-						"interests": ["Interest(s):", "Communications"]
-					},
-					"interest19":{
-						"fname": ["First Name:", "Dean"],
-						"lname": ["Last Name:", "Marnova"],
-						"email": ["Email:", "thadeanster@me.com"],
-						"sex": ["Sex:", "Male"],
-						"group": ["GPA:", "C: 2.4 - 1.5"],
-						"pop": ["Campus Size:", "Medium"],
-						"interests": ["Interest(s):", "agriculture, natural resources"]
-					},
-					"interest20":{
-						"fname": ["First Name:", "Anna"],
-						"lname": ["Last Name:", "Riley"],
-						"email": ["Email:", "sweetandmean2896@comcast.net"],
-						"sex": ["Sex:", "Female"],
-						"group": ["GPA:", "B: 3.4 - 2.5"],
-						"pop": ["Campus Size:", "Small"],
-						"interests": ["Interest(s):", "Graphic Design, Visual Arts, Intermedia/Multimedia"]
-					}
-				]
+		<fname>Sandra</fname>
+		<lname>Williams</lname>
+		<email>truthis@gmail.com</email>
+		<sex>Female</sex>
+		<group>
+			<gpa>GPA:", "A: 4.0 - 3.5"]</gpa>
+		</group>
+		<pop>
+			<campusSize>Large</campusSize>
+		</pop>
+		<interests>Teaching, Cinematography, Law</interests>
+	</interest2>
+	<interest3>
+		<fname>Brian</fname>
+		<lname>Moore</lname>
+		<email>teamphilly@me.com</email>
+		<sex>Male</sex>
+		<group>
+			<gpa>D: 1.4 - 1.0</gpa>
+		</group>
+		<pop>
+			<campusSize>Medium</campusSize>
+		</pop>
+		<interest>Medical, Business Administration, Game Design</interest>
+	</interest3>
+	<interest4>
+		<fname>Blake</fname>
+		<lname>Griffin</lname>
+		<email>saveme@gmail.com</email>
+		<sex>Male</sex>
+		<group>
+			<gpa>C: 2.4 - 1.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Medium</campusSize>
+		</pop>
+		<interest>Law Enforcement, Business Administration, Mobile Development</interest>
+	</interest4>
+	<interest5>
+		<fname>Myra</fname>
+		<lname>Ray</lname>
+		<email>rayoflight@aol.com</email>
+		<sex>Female</sex>
+		<group>
+			<gpa>B: 3.4 - 2.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Large</campusSize>
+		</pop>
+		<interest>Business Data Processing</interest>
+	</interest5>
+	<interest6>
+		<fname>Billy</fname>
+		<lname>Goldstein</lname>
+		<email>digforgold@mac.com</email>
+		<sex>Male</sex>
+		<group>
+			<gpa>A: 4.0 - 3.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Large</campusSize>
+		</pop>
+		<interest>Computer Engineering</interest>
+	</interest6>
+	<interest7>
+		<fname>Danielle</fname>
+		<lname>Williams</lname>
+		<email>pixiedust@yahoo.com</email>
+		<sex>Female</sex>
+		<group>
+			<gpa>A: 4.0 - 3.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Small</campusSize>
+		</pop>
+		<interest>Marketing, Marketing Management</interest>
+	</interest7>
+	<interest8>
+		<fname>Wilbur</fname>
+		<lname>Meng</lname>
+		<email>muse783@netscpae.com</email>
+		<sex>Male</sex>
+		<group>
+			<gpa>D: 1.4 - 1.0</gpa>
+		</group>
+		<pop>
+			<campusSize>Medium</campusSize>
+		</pop>
+		<interest>Information Sciences and Systems</interest>
+	</interest8>
+	<interest9>
+		<fname>Simon</fname>
+		<lname>Villani</lname>
+		<email>sim0ntheman@gmail.com</email>
+		<sex>Male</sex>
+		<group>
+			<gpa>C: 2.4 - 1.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Large</campusSize>
+		</pop>
+		<interest>Mathematician</interest>
+	</interest9>
+	<interest10>
+		<fname>Seaterra</fname>
+		<lname>Mandel</lname>
+		<email>skyisthelimit@gmail.com</email>
+		<sex>Female</sex>
+		<group>
+			<gpa>B: 3.4 - 2.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Large</campusSize>
+		</pop>
+		<interest>Economics, Finance</interest>
+	</interest10>
+	<interest11>
+		<fname>Adrian</fname>
+		<lname>Kline</lname>
+		<email>bigpond@aol.com</email>
+		<sex>Male</sex>
+		<group>
+			<gpa>B: 3.4 - 2.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Medium</campusSize>
+		</pop>
+		<interest>Business Administration, Management</interest>
+	</interest11>
+	<interest12>
+		<fname>Sonya</fname>
+		<lname>McAfee</lname>
+		<email>beatclub@bellsouth.net</email>
+		<sex>Female</sex>
+		<group>
+			<gpa>A: 4.0 - 3.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Small</campusSize>
+		</pop>
+		<interest>Computer Science</interest>
+	</interest12>
+	<interest13>
+		<fname>Andre</fname>
+		<lname>Wright</lname>
+		<email>wrightbros@penup.com</email>
+		<sex>Male</sex>
+		<group>
+			<gpa>D: 1.4 - 1.0</gpa>
+		</group>
+		<pop>
+			<campusSize>Medium</campusSize>
+		</pop>
+		<interest>Electrical Engineering</interest>
+	</interest13>
+	<interest14>
+		<fname>Carl</fname>
+		<lname>Thomas</lname>
+		<email>melodiesfr0mheaven@gmail.com</email>
+		<sex>Male</sex>
+		<group>
+			<gpa>C: 2.4 - 1.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Medium</campusSize>
+		</pop>
+		<interest>Mechanical Engineering</interest>
+	</interest14>
+	<interest15>
+		<fname>Melodie</fname>
+		<lname>Cartwright</lname>
+		<email>ladywithattitude@me.com</email>
+		<sex>Female</sex>
+		<group>
+			<gpa>B: 3.4 - 2.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Large</campusSize>
+		</pop>
+		<interest>Accounting</interest>
+	</interest15>
+	<interest16>
+		<fname>Abel</fname>
+		<lname>Cheng</lname>
+		<email>oodleofnoodle@mac.com</email>
+		<sex>Male</sex>
+		<group>
+			<gpa>A: 4.0 - 3.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Small</campusSize>
+		</pop>
+		<interest>Scientist</interest>
+	</interest16>
+	<interest17>
+		<fname>Kara</fname>
+		<lname>Corker</lname>
+		<email>karacola@verizon.com</email>
+		<sex>Female</sex>
+		<group>
+			<gpa>A: 4.0 - 3.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Small</campusSize>
+		</pop>
+		<interest>liberal Arts</interest>
+	</interest17>
+	<interest18>
+		<fname>Wesley</fname>
+		<lname>Snipes</lname>
+		<email>bladeinfinity2025@gmail.com</email>
+		<sex>Male</sex>
+		<group>
+			<gpa>D: 1.4 - 1.0</gpa>
+		</group>
+		<pop>
+			<campusSize>Large</campusSize>
+		</pop>
+		<interest>Communications</interest>
+	</interest18>
+	<interest19>
+		<fname>Dean</fname>
+		<lname>Marnova</lname>
+		<email>thadeanster@me.com</email>
+		<sex>Male</sex>
+		<group>
+			<gpa>C: 2.4 - 1.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Medium</campusSize>
+		</pop>
+		<interest>agriculture, natural resources</interest>
+	</interest19>
+	<interest20>
+		<fname>Anna</fname>
+		<lname>Riley</lname>
+		<email>sweetandmean2896@comcast.net</email>
+		<sex>Female</sex>
+		<group>
+			<gpa>B: 3.4 - 2.5</gpa>
+		</group>
+		<pop>
+			<campusSize>Small</campusSize>
+		</pop>
+		<interest>Graphic Design, Visual Arts, Intermedia/Multimedia</interest>
+	</interest20>
 </interests>
