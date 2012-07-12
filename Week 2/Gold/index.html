@@ -215,30 +215,20 @@
 					<!--<li><a href="https://github.com/g2musicgroup/MIU/tree/master/Week4/Bronze/index.html" data-icon="back">Bronze App</a></li>-->
 					<li><a href="#addcollege" data-icon="plus" class="ui-btn-active">Add</a></li>
 				</ul>
-			</div><!-- /navbar -->
+			</div>
+			<!-- /navbar -->
 <!--/Footer-->
 		</div>
 <!--/Page-->
 	</div>
-<!--Dialog-->
-	<div data-role="dialog" id="recordCollegeErrors">
-		<div data-role="header" data-position="fixed">
-			<h1>Errors</h1>
-		</div>
-		<div data-role="content">
-			<ul>
-				<li>Test</li>
-			</ul>
-		</div>
-<!--/Dialog-->
-	</div>
+
 <!--displaydata-->
 	<div data-role="page" id="displaydata">
 		<div data-role="header" data-position="fixed">
 			<h1>Saved Data</h1>
-			<p><a href="#home"><img src="images/Logo.png" style="height: 80px; padding: 0px 10px;" id="logo"></a></p>
+			<p><a href="#" data-rel="back"><img src="images/Logo.png" style="height: 80px; padding: 0px 10px;" id="logo"></a></p>
 		</div>
-		<div data-role="content">
+		<div data-role="content" id="studentData">
 			<ul>
 				<li>Test</li>
 			</ul>
@@ -258,6 +248,7 @@
 		</div>
 	<!--/displaydata-->
 	</div>
+
 	<!--Coming Soon-->
 	<div data-role="page" id="comingsoon">
 		<div data-role="header">
@@ -284,7 +275,19 @@
 		</div>
 <!--/Coming Soon-->
 	</div>
-	
+
+<!--Dialog-->
+	<div data-role="dialog" id="recordCollegeErrors">
+		<div data-role="header" data-position="fixed">
+			<h1>Errors</h1>
+		</div>
+		<div data-role="content">
+			<ul>
+				<li>Test</li>
+			</ul>
+		</div>
+<!--/Dialog-->
+	</div>	
 
 	<!-- JavaScript under here -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>

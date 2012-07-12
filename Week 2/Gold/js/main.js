@@ -63,7 +63,7 @@ $(document).ready(function() {
             create += '<option value="'+gpaRanges[i]+'">'+gpaRanges[i]+'</option>';
         }
         create += '</select>';
-        $('#select').append(create);
+        $('#select').append($(create);
     };
     ranges();
 
@@ -90,22 +90,21 @@ $(document).ready(function() {
     function saveData (key) {
     
         // If there is no key this means this is a brand new item and we need a brand new key
-        if(!key){
+        if ($(!key).val() == ''){
          
         //Gather up all form filled values and store in object.
         var id   = Math.floor(Math.random()* 10000001);
-        }
         /*Remove Weird Data that creates keys for file directories
         else if(key === "A-Z" || "a-z")
         {
             //delete weird data and move on
             localStorage.removeItem(this.key);
         */
-        else{
+        }else{
             // Set the id to the existing key that we're editing so that it will save over the data
             //The key is the same key that's been passed along from the editSubmit event handler
             //to the validate function, and then passed here, into the storeData function.
-            id = key;
+            var id = $(key).val();
         };
         //Object properties contain array with the form label and input value.
         getSelectedRadio();
@@ -137,19 +136,25 @@ $(document).ready(function() {
     // get the image for the right category being displayed
     function getImage (iconName, makeSubList) {
         var imageLi = $('<li/>');
-        makeSubList.append(imageLi);
+        makeSubList.append($(imageLi);
         var newImg = $('<img/>');
         var setSrc = newImg.attr('src', "images/icons"+ iconName +".png");
-        imageLi.append(newImg);
+        imageLi.append($(newImg);
      };
-     
+     displayLink(localStorage);
      
 
     function getData () {
        // toggleControls("on");
         if (localStorage.length === 0) {
-            alert("There is no data in Local Storage so default data was added.");
-            autoFillData();
+           var dummy = confirm("There is no data in Local Storage. Add default data?");
+            if(dummy=== true){
+               autoFillData(); 
+               alert("Default data has been added.");
+            }else{
+                alert('Please enter data.');
+                window.location.reload();
+            }   
         };
         //displayLink(localStorage); // build the data to display on the list page
         $.mobile.changePage('#displaydata'); // go to page to display list
@@ -169,16 +174,16 @@ $(document).ready(function() {
         makeList.attr("data-filter", "true");
         makeList.attr("data-inset", "true");
 
-        makeDiv.append(makeList);
-        makeDivPrimary.append(makeList);
-        $(document.body).append(makeDiv);
+        makeDiv.append($(makeList));
+        makeDivPrimary.append($(makeList);
+        $(document.body).append($(makeDiv);
         $("#items").css({"display": "block"});
         for (var i = 0, ls = localStorage.length; i < ls; i++) {
             var makeli = $('<li></li>');
             makeli.attr("id", "two");
             var linksli = $('<li></li>');
             linksli.attr("id", "#three");
-            makeList.append(makeli);
+            makeList.append($(makeli);
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
             //convert string from local storage value back to an object by using JSON.parse()
@@ -187,15 +192,15 @@ $(document).ready(function() {
             makeSubList.attr("href", "#");
             makeSubList.attr("id", "#four");
             
-            makeli.append(makeSubList);
+            makeli.append($(makeSubList);
             
             getImage(obj.group[1], makeSubList);
             for(var b in obj){
                 var makeSubli = $('<li/>');
-                makeSubList.append(makeSubli);
+                makeSubList.append($(makeSubli);
                 var optSubText = obj[b][0] + " " + obj[b][1];
                 makeSubli.html = optSubText;
-                makeSubList.append(linksli);
+                makeSubList.append($(linksli);
             };
             makeItemLinks(localStorage.key(i), linksli ); // Create our edit and delete links/buttons for each item in local storage.
         };
@@ -212,11 +217,11 @@ $(document).ready(function() {
             editItem();
         });
         editLink.html = editText;
-        linksli.append(editLink);
+        linksli.append($(editLink);
  
         //Add line break
         var breakTag = $('<br/>');
-        linksli.append(breakTag);
+        linksli.append($(breakTag);
  
         var deleteLink = $('<a/>');
             deleteLink.href = '#';
@@ -227,7 +232,7 @@ $(document).ready(function() {
         });
         deleteLink.html = "Delete Text";
     };
-        linksli.append(deleteLink);
+        linksli.append($(deleteLink);
  
     
     function editItem () {
@@ -363,7 +368,7 @@ $(document).ready(function() {
             for (var i = 0, j = messageAry.length; i < j; i++) {
                 var txt = $('<li/>');
                 txt.html = messageAry[i];
-                errMsg.append(txt);
+                errMsg.append($(txt);
             };
             data.preventDefault();
             return false;
