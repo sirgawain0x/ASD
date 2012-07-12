@@ -155,8 +155,8 @@ $(document).ready(function() {
         $.mobile.changePage('#displaydata'); // go to page to display list
     };
         //write data from local storage to browser.
-        var makeDiv = $('<div/>');
-        makeDiv.attr("id", "items");
+        var makeDiv = $('<div></div>');
+        makeDiv.attr("id", "#items");
         makeDiv.attr("data-role", "content");
         makeDiv.attr("data-theme", "d");
 
@@ -174,18 +174,18 @@ $(document).ready(function() {
         $(document.body).append(makeDiv);
         $("#items").css({"display": "block"});
         for (var i = 0, ls = localStorage.length; i < ls; i++) {
-            var makeli = $('<li/>');
+            var makeli = $('<li></li>');
             makeli.attr("id", "two");
-            var linksli = $('<li/>');
-            linksli.attr("id", "three");
+            var linksli = $('<li></li>');
+            linksli.attr("id", "#three");
             makeList.append(makeli);
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
             //convert string from local storage value back to an object by using JSON.parse()
             var obj = JSON.parse(value);
-            var makeSubList = $('<ul/>');
+            var makeSubList = $('<ul></<ul>');
             makeSubList.attr("href", "#");
-            makeSubList.attr("id", "four");
+            makeSubList.attr("id", "#four");
             
             makeli.append(makeSubList);
             
@@ -376,15 +376,9 @@ $(document).ready(function() {
     };
 
     // Submit Link & Submit Click Events
-    var displayLink = $("#displayLink").click(function(){
-        getData();
-    });
+    $("#displayLink").on('click', getData);
 
-    var clearLink = $("#clear").click(function(){
-        clearLocal();
-    });
+    $("#clear").on('click', clearLocal);
 
-    var submit = $("input#submit").click(function() {
-        saveData();
-    });
+    $('#submit').on('click', saveData);
 });
