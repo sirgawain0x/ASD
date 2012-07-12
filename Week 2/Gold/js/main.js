@@ -11,7 +11,7 @@ $(document).ready(function() {
             //options to change behavior of validator
             invalidHandler: function(form, validator){
                 //error messages
-                rcerrorslink.bind();
+                rcerrorslink.on();
                 var html = " ";
                 for(var key in validator.submitted){
                     var label = $('label[for^="'+ key +'"]').not('[generated]');
@@ -104,7 +104,7 @@ $(document).ready(function() {
             // Set the id to the existing key that we're editing so that it will save over the data
             //The key is the same key that's been passed along from the editSubmit event handler
             //to the validate function, and then passed here, into the storeData function.
-            var id = $(key).val();
+            id = $(key).val();
         };
         //Object properties contain array with the form label and input value.
         getSelectedRadio();
@@ -213,9 +213,7 @@ $(document).ready(function() {
             editLink.href = '#';
         editLink.key = key;
         var editText = "Edit Information";
-        editLink.click(function(){
-            editItem();
-        });
+        editLink.on('click', editItem);
         editLink.html = editText;
         linksli.append($(editLink));
  
@@ -227,9 +225,7 @@ $(document).ready(function() {
             deleteLink.href = '#';
         deleteLink.key = key;
         var deleteText = "Delete Information";
-        deleteLink.click(function(){
-            deleteItem();
-        });
+        deleteLink.on('click', deleteItem);    
         deleteLink.html = "Delete Text";
     };
         linksli.append($(deleteLink));
@@ -269,18 +265,14 @@ $(document).ready(function() {
         };
         $('#comments').val = obj.interests[1];
          // Remove the initial listener from the input 'submit' button.
-        save.off.click(function() {
-            saveData();
-        });
+        save.off.on('click', saveData);
  
         // Change submit button value to edit button
         $('#submit').val = "Edit Information";
         var editSubmit = $('#submit');
         //Save the key value established in this function as a property of the editSumbit event
         //so we can use that value when we save the data we edited.
-        editSubmit.click(function(){
-            validate();
-        });
+        editSubmit.on('click',validate);
         
         editSubmit.key = this.key;
     };
@@ -387,10 +379,3 @@ $(document).ready(function() {
 
     $('#submit').on('click', saveData);
 });
-
-
-
-
-
-
-
