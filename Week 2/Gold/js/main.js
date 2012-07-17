@@ -65,7 +65,7 @@ $(document).ready(function() {
         create += '</select>';
         $('#select').append($(create));
     };
-    ranges();
+    console.log(ranges);
 
     //Find Value of selected radio button
     function getSelectedRadio () {
@@ -76,6 +76,7 @@ $(document).ready(function() {
             };
         };
     };
+    console.log(getSelectedRadio);
 
     //Find Value of selected checkbox
     function getCheckbox () {
@@ -86,6 +87,7 @@ $(document).ready(function() {
             };
         };
     };
+    console.log(getCheckbox);
 
     function saveData (key) {
     
@@ -122,6 +124,7 @@ $(document).ready(function() {
         localStorage.setItem(id, JSON.stringify(item));
         alert("Information Saved!");
     };
+    console.log(saveData);
 
     //Auto Populate Local Storage
     function autoFillData () {
@@ -132,6 +135,7 @@ $(document).ready(function() {
             localStorage.setItem(id, JSON.stringify(json[c]));
         };
     };
+    console.log(autoFillData);
     
     // get the image for the right category being displayed
     function getImage (iconName, makeSubList) {
@@ -378,4 +382,17 @@ $(document).ready(function() {
     $("#clear").on('click', clearLocal);
 
     $('#submit').on('click', saveData);
+});
+$("#extras").on('pageinit',function(){
+
+    $('#json').on('click',function(){
+        $.ajax({
+            url: 'data/data.json',
+            dataType: 'json',
+            success: function(data){
+                console.log(data);                
+            }
+        });
+    });
+
 });

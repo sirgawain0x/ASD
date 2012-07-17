@@ -1,12 +1,4 @@
-/*  Title: My First App (Assignment 4)
-	Created By: Gawain Bracy II
-	Date: 04/26/12
-	VFW 1203
-*/
-$("#one").on("pagebeforecreate", function () {
-    localStorage.clear();
-
-var json = [
+[
     {
         "interest1": {
             "fname": [
@@ -610,11 +602,3 @@ var json = [
         }
     }
 ]
-
-$.each(jsonItems.items, function (index, singleItem) {
-        var _id = Math.floor(Math.random() * 100001);
-        var toStore = JSON.stringify(singleItem);
-        localStorage.setItem(_id, toStore);
-        console.log("Saved item " + index + " to storage with _id = " + _id);
-    });
-});
