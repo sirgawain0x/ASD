@@ -383,6 +383,7 @@ $(document).ready(function() {
 
     $('#submit').on('click', saveData);
 });
+
 $("#extras").on('pageinit',function(){
 
     $('#json').on('click',function(){
@@ -391,6 +392,16 @@ $("#extras").on('pageinit',function(){
             dataType: 'json',
             success: function(data){
                 console.log(data);                
+            }
+        });
+    });
+
+    $('#xml').on('click', function(){
+        $.ajax({
+            url: 'data/data.xml',
+            dataType: 'xml',
+            success: function(data){
+                console.log(data);
             }
         });
     });
