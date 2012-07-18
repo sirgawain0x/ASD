@@ -1,0 +1,332 @@
+<!--Gawain Bracy II
+	Week 2 Assignment
+	05/09/3012
+	MiU 1305-->
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>College Selector</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="330"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+<!--INDEX-->
+	<div data-role="page" id="home" >
+		<div data-role="header" data-theme="a">
+			<p><a href="#home"><img src="images/Logo.png" style="height: 80px; padding: 0px 10px;" id="logo"></a></p>
+			<form method='get' action="http://www.google.com/search"><input type="search" name="q" id="search-basic" data-role="searchbar" placeholder="Search For A College..."/>
+			</form>
+		</div>
+		<div data-role="content">
+			<div text-align:"center" style="position: relative;"><a href="#addcollege"><img src="images/CTA_05.jpg" alt="image" style="position: relative; width: 100%"/></a>
+			</div>
+			<p><a href="#addcollege" data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right" data-ajax="false">Add A College</a></p>
+			<div data-role="collapsible" data-mini="true" data-iconpos="right" data-theme="b">
+   			<h3>Previous College Interests</h3>
+   				<ul data-role="listview">
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Welding, Astronaut, Accounting</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Teaching, Cinematography, Law</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Medical, Business Administration, Game Design</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Law Enforcement, Business Administration, Mobile Development</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Business Data Processing</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Computer Engineering</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Marketing, Marketing Management</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Information Sciences and Systems</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Mathematician</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Economics, Finance</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Business Administration, Management</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Computer Science</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Electrical Engineering</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Mechanical Engineering</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Accounting</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Scientist</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Liberal Arts</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Communications</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Agriculture, Natural resources</a></li>
+   					<li><img src="images/icons/icon_01.png" style="height: 30px"><a href="#comingsoon">Graphic Design, Visual Arts, Intermedia/Multimedia</a></li>
+   				</ul>
+			</div>
+			<!--News Feed Title-->
+			<div id="news" align="center"><h3>Recent Colleges</h3>
+			</div> 
+			<div class="ui-grid-b" >
+				<div class="ui-block-a">
+							<a href="" data-inlay="true">
+								<img src="images/uofmiami.jpg" height="80px"/>
+								<h4>University of Miami</h4>
+							</a>
+				</div>
+				<div class="ui-block-b">
+							<a href="">
+								<img src="images/uofarizona.png" height="80px"/>
+								<h4>University of Arizona</h4>
+							</a>
+				</div>
+				<div class="ui-block-c">
+							<a href="">
+								<img src="images/NYUarch.jpg" height="80px"/>
+								<h4>New York University</h4>
+							</a>
+				</div>
+			</div>
+<!--/Content-->
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-id="home" >
+			
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" class="ui-btn-active" data-icon="home">Home</a></li>
+					<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>
+					<li><a href="#extras" data-icon="gear">Extras</a></li>
+					<!--<li><a href="http://g2musicgroup.github.com/MIU/Week4/Bronze/index.html" data-icon="back">Bronze App</a></li>-->
+					<li><a href="#addcollege" data-icon="plus">Add</a></li>
+				</ul>
+<!-- /navbar -->
+			</div>
+<!--/Footer-->
+		</div>
+<!--/Page-->
+	</div>
+<!--Form-->
+	<div data-role="page" id="addcollege">
+		<div data-role="header">
+			<h1>Add A College</h1>
+			<p><a href="#home"><img src="images/Logo.png" style="height: 80px; padding: 0px 10px;" id="logo"></a></p>
+		</div>
+		<div class="ui-grid-b" data-type="horizontal">
+			<div class="ui-block-a">
+				<a href="#" data-role="button" id="displayLink" data-mini="true" data-inline="true" data-theme="b">Display Data</a>
+			</div>
+			<div class="ui-block-b">
+				<a href="#" data-role="button" id= "clear" data-mini="true" data-inline="true" data-theme="c">Clear Stored Data</a>
+				<a href="#addcollege" data-role="button" id="addNew" style="display:none" data-mini="true" data-inline="true" data-theme="c">Add New Item</a>
+			</div>
+		</div>
+		<div data-role="content">
+			<form action="#" method="post" id="projectForm">
+			<fieldset>
+				<legend>Information</legend>
+				<span class="need"><h5>* Fields Required</h5></span>
+				<ul id="errors"></ul>
+				<ul>
+					<div data-role="fieldcontain">
+					<li><label for="fname"><h4>* First Name</h4></label>
+						<input type="text" name="fname" id="fname" class="required" placeholder="First Name" /></li>
+					</div>
+					<div data-role="fieldcontain">
+					<li><label for="lname"><h4>* Last Name</h4></label>
+						<input type="text" name="lname" id="lname" class="required" placeholder="Last Name" /></li>
+					</div>
+					<!--<li><label for="pword">* Password:</label><input type="password" id="pword" onfocus="styleField(&quot;pword&quot;);" onBlur="unstyleField(&quot;pword&quot;);"/></li>
+					<li><label for="cpword">* Confirm Password:(Disabled)</label><input type="password" id="cpword" onfocus="styleField(&quot;cpword&quot;);" onBlur="unstyleField(&quot;cpword&quot;);" disabled /></li>-->
+					<div data-role="fieldcontain">
+					<li><label for="email"><h4>* Email</h4></label>
+						<input type="email" name="email" id="email" class="required email" /><p>example@email.com</p></li>
+					</div>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<legend>Questions</legend>
+				<ul>
+					<li id="label"><h4>Male or Female?</h4>
+						<ul>
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup">
+									<li><label for="male">Male</label>
+									<input type="radio" id="male" checked value="male" name="sex" /></li>
+									<li><label for="female">Female</label>
+									<input type="radio" id="female" name="sex" /></li>
+								</fieldset>
+							</div>
+						</ul>
+					</li>
+					<div data-role="fieldcontain">
+					<li id="select">
+						<label for="gpaRange"><h4>* GPA Range</h4></label>
+						<!--<select id="gpa">
+							<optgroup label="A">
+								<option value="3.5 - 4.0">3.5 - 4.0</option>
+							</optgroup>
+							<optgroup label="B">
+								<option Value="2.5 - 3.4">2.5 - 3.0</option>
+							</optgroup>
+							<optgroup label="C">
+								<option value="1.5 - 2.4">1.5 - 2.0</option>
+							</optgroup>
+							<optgroup label="D">
+								<option value="1.0 - 1.4">1.0 - 1.4</option>
+							</optgroup>
+							<optgroup label="F">
+								<option value="0.0 - 0.9">0.0 - 0.9</option>
+							</optgroup>
+						</select>-->
+					</li>
+					</div>
+					<li id="label"><h4>Campus Size</h4>
+						<ul>
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup">
+									<li><label for="small">Small (5k or less)></label><input type="checkbox" name="size" id="small" /></li>
+									<li><label for="medium">Medium (5k - 15k)></label><input type="checkbox" checked value="Medium" name="size" id="medium" /></li>
+									<li><label for="large">Large (15k +)></label><input type="checkbox" name="size" id="large" /></li>
+								</fieldset>
+							</div>
+						</ul>
+					</li>
+					<div data-role="fieldcontain">
+					<li><label for="comments" ><h5>* What are your career interests?</h5></label>
+						<textarea name="comments" id="comments" class="required"></textarea>
+						<p>Example: Engineering, Teaching, etc.</p></li>
+					</div>
+				</ul>
+			</fieldset>
+			<div data-role="fieldcontain">
+			<input type="submit" id="submit" value="Submit" data-theme="b" data-inline="true"/>
+			<a href="#home" id="cancel" data-inline="true">Cancel</a>
+			</div>
+			<a href="#recordcollegeerrors" id="rcerrorslink" data-rel="dialog" data-transition="pop">Open Errors</a>
+			</form><!--Form-->
+		</div><!--Content-->
+
+		<div data-role="footer" data-position="fixed" data-id="home">
+			
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>
+					<!--<li><a href="https://github.com/g2musicgroup/MIU/tree/master/Week4/Bronze/index.html" data-icon="back">Bronze App</a></li>-->
+					<li><a href="#addcollege" data-icon="plus" class="ui-btn-active">Add</a></li>
+				</ul>
+			</div>
+			<!-- /navbar -->
+<!--/Footer-->
+		</div>
+<!--/Page-->
+	</div>
+
+<!--displaydata-->
+	<div data-role="page" id="displaydata">
+		<div data-role="header" data-position="fixed">
+			<h1>Saved Data</h1>
+			<p><a href="#" data-rel="back"><img src="images/Logo.png" style="height: 80px; padding: 0px 10px;" id="logo"></a></p>
+		</div>
+		<div data-role="content" id="studentData">
+			<ul>
+				<li>Test</li>
+			</ul>
+		</div>
+<!--Footer-->
+		<div data-role="footer" data-position="fixed" data-id="home">
+<!--navbar-->
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>
+					<!--<li><a href="https://github.com/g2musicgroup/MIU/tree/master/Week4/Bronze/index.html" data-icon="back">Bronze App</a></li>-->
+					<li><a href="#addcollege" data-icon="plus" class="ui-btn-active">Add</a></li>
+				</ul>
+			<!-- /navbar -->
+			</div>
+		<!--/Footer-->
+		</div>
+	<!--/displaydata-->
+	</div>
+
+	<!--Coming Soon-->
+	<div data-role="page" id="comingsoon">
+		<div data-role="header">
+			<h1>Coming Soon</h1>
+			<p><a href="#home"><img src="images/Logo.png" style="height: 80px; padding: 0px 10px;" id="logo"></a></p>
+		</div>
+<!--Content-->
+		<div data-role="content">
+			<h3 id="soon" align="center">Coming Soon</h3>
+		</div>
+<!--Footer-->
+		<div data-role="footer" data-position="fixed" data-id="home">
+<!--navbar-->
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>
+					<!--<li><a href="https://github.com/g2musicgroup/MIU/tree/master/Week4/Bronze/index.html" data-icon="back">Bronze App</a></li>-->
+					<li><a href="#addcollege" data-icon="plus" class="ui-btn-active">Add</a></li>
+				</ul>
+			<!-- /navbar -->
+			</div>
+		<!--/Footer-->
+		</div>
+<!--/Coming Soon-->
+	</div>
+
+<!--Extras PAge-->
+<div data-role="page" id="extras">
+		<div data-role="header" data-position="fixed">
+			<h1>Saved Data</h1>
+			<p><a href="#" data-rel="back"><img src="images/Logo.png" style="height: 80px; padding: 0px 10px;" id="logo"></a></p>
+		</div>
+		<div data-role="content" id="database">
+				<p><a href="#" id='json' data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right" >JSON</a></p>
+				<p><a href="#" id='xml' data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right" >XML</a></p>
+				<p><a href="#" id='csv' data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right" >CSV</a></p>
+			<ul>
+			</ul>
+		</div>
+<!--Footer-->
+		<div data-role="footer" data-position="fixed" data-id="home">
+<!--navbar-->
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>
+					<!--<li><a href="https://github.com/g2musicgroup/MIU/tree/master/Week4/Bronze/index.html" data-icon="back">Bronze App</a></li>-->
+					<li><a href="#addcollege" data-icon="plus" class="ui-btn-active">Add</a></li>
+				</ul>
+			<!-- /navbar -->
+			</div>
+		<!--/Footer-->
+		</div>
+	<!--/Extras Page-->
+	</div>
+
+<!--Dialog-->
+	<div data-role="dialog" id="recordCollegeErrors">
+		<div data-role="header" data-position="fixed">
+			<h1>Errors</h1>
+		</div>
+		<div data-role="content">
+			<ul>
+				<li>Test</li>
+			</ul>
+		</div>
+<!--/Dialog-->
+	</div>	
+
+	<!-- JavaScript under here -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/JSON.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
