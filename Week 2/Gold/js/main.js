@@ -43,6 +43,8 @@ $(document).ready(function() {
     // variable defaults
    var sexValue,
        sizeValue,
+       deleteLink,
+       displayLink,
        json;
 
     //getElementById function
@@ -145,7 +147,7 @@ $(document).ready(function() {
         var setSrc = newImg.attr('src', "images/icons"+ iconName +".png");
         imageLi.append($(newImg));
      };
-     displayLink(localStorage);
+    // displayLink(localStorage);
      
 
     function getData () {
@@ -153,7 +155,7 @@ $(document).ready(function() {
         if (localStorage.length === 0) {
            var dummy = confirm("There is no data in Local Storage. Add default data?");
             if(dummy=== true){
-               autoFillData(); 
+               autoFillData();
                alert("Default data has been added.");
             }else{
                 alert('Please enter data.');
@@ -406,4 +408,20 @@ $("#extras").on('pageinit',function(){
         });
     });
 
+    $('#csv').on('click', function(){
+        $.ajax({
+            url: 'data/data.csv',
+            dataType: 'csv',
+            success: function(data) {
+                console.log(data);
+            }
+        });
+    });
+
 });
+
+
+
+
+
+
