@@ -1,0 +1,9 @@
+<?php
+
+require_once 'php/DataSource.php';
+
+$csv = new php_DataSource;
+$csv->load('data.csv');
+var_export($csv->connect());
+
+?>

@@ -20,11 +20,11 @@
 	
 	<!-- StyleSheets under here -->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 	
 	
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
-	<script src="js/libs/modernizr.custom.min.js"></script>
+	<script src="libs/modernizr.custom.min.js"></script>
 
 </head>
 <body>
@@ -75,10 +75,10 @@
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" class="ui-btn-active" data-icon="home">Home</a></li>
-					<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>
-					<li><a href="#extras" data-icon="gear">Extras</a></li>
+					<!--<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>-->
 					<!--<li><a href="http://g2musicgroup.github.com/MIU/Week4/Bronze/index.html" data-icon="back">Bronze App</a></li>-->
 					<li><a href="#addcollege" data-icon="plus">Add</a></li>
+					<li><a href="#extras" data-icon="gear">Extras</a></li>
 				</ul>
 <!-- /navbar -->
 			</div>
@@ -192,9 +192,10 @@
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
-					<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>
+					<!--<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>-->
 					<!--<li><a href="https://github.com/g2musicgroup/MIU/tree/master/Week4/Bronze/index.html" data-icon="back">Bronze App</a></li>-->
 					<li><a href="#addcollege" data-icon="plus" class="ui-btn-active">Add</a></li>
+					<li><a href="#extras" data-icon="gear">Extras</a></li>
 				</ul>
 			</div>
 			<!-- /navbar -->
@@ -211,7 +212,7 @@
 		</div>
 		<div data-role="content" id="studentData">
 			<ul>
-				<li>Test</li>
+				
 			</ul>
 		</div>
 <!--Footer-->
@@ -220,9 +221,10 @@
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
-					<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>
+					<!--<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>-->
 					<!--<li><a href="https://github.com/g2musicgroup/MIU/tree/master/Week4/Bronze/index.html" data-icon="back">Bronze App</a></li>-->
 					<li><a href="#addcollege" data-icon="plus" class="ui-btn-active">Add</a></li>
+					<li><a href="#extras" data-icon="gear">Extras</a></li>
 				</ul>
 			<!-- /navbar -->
 			</div>
@@ -231,7 +233,7 @@
 	<!--/displaydata-->
 	</div>
 
-	<!--Coming Soon-->
+<!--Coming Soon-->
 	<div data-role="page" id="comingsoon">
 		<div data-role="header">
 			<h1>Coming Soon</h1>
@@ -247,9 +249,10 @@
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
-					<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>
+					<!--<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>-->
 					<!--<li><a href="https://github.com/g2musicgroup/MIU/tree/master/Week4/Bronze/index.html" data-icon="back">Bronze App</a></li>-->
 					<li><a href="#addcollege" data-icon="plus" class="ui-btn-active">Add</a></li>
+					<li><a href="#extras" data-icon="gear">Extras</a></li>
 				</ul>
 			<!-- /navbar -->
 			</div>
@@ -258,17 +261,17 @@
 <!--/Coming Soon-->
 	</div>
 
-<!--Extras PAge-->
+<!--Extras Page-->
 <div data-role="page" id="extras">
 		<div data-role="header" data-position="fixed">
-			<h1>Saved Data</h1>
+			<h1>Default Data Databases</h1>
 			<p><a href="#" data-rel="back"><img src="images/Logo.png" style="height: 80px; padding: 0px 10px;" id="logo"></a></p>
 		</div>
 		<div data-role="content" id="database">
 				<p><a href="#" id='json' data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right" >JSON</a></p>
 				<p><a href="#" id='xml' data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right" >XML</a></p>
 				<p><a href="#" id='csv' data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right" >CSV</a></p>
-			<ul>
+			<ul id="databaselist" data-role="listview">
 			</ul>
 		</div>
 <!--Footer-->
@@ -277,15 +280,16 @@
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
-					<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>
+					<!--<li><a href="https://github.com/g2musicgroup/ASD/tree/gh-pages/Week 1" data-icon="star">gh-Pages</a></li>-->
 					<!--<li><a href="https://github.com/g2musicgroup/MIU/tree/master/Week4/Bronze/index.html" data-icon="back">Bronze App</a></li>-->
-					<li><a href="#addcollege" data-icon="plus" class="ui-btn-active">Add</a></li>
+					<li><a href="#addcollege" data-icon="plus">Add</a></li>
+					<li><a href="#extras" data-icon="gear" class="ui-btn-active">Extras</a></li>
 				</ul>
 			<!-- /navbar -->
 			</div>
 		<!--/Footer-->
 		</div>
-	<!--/Extras Page-->
+<!--/Extras Page-->
 	</div>
 
 <!--Dialog-->
@@ -304,8 +308,8 @@
 	<!-- JavaScript under here -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="js/JSON.js"></script>
+	<script type="text/javascript" src="libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="data/data.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 
 </body>

@@ -2,7 +2,9 @@
   "env": {
     "local": {
       "db": "http://127.0.0.1:5984/collegeselector"
-    
+    },
+    "cloudant": {
+      "db": "https://bracygawain:Bassplay4@bracygawain.cloudant.com/collegeselector"
     }
   }
 }

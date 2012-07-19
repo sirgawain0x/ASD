@@ -1,0 +1,69 @@
+html, body, ul, li {
+  	height: 100%;
+  	margin: 0;
+  	padding: 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+legend{
+	font: 1.3em "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+	color: #F7931E;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: rgba(0,0,0,0.15) 10px 9px 2px;
+}
+
+#soon{
+	color: #F7931E;
+}
+
+.need{
+	color: #F7931E;
+	font: 0.9em Arial, "Trebuchet MS", sans-serif;
+	font-style: italic;
+}
+
+.curFocus{
+	background-color: yellow;
+}
+
+textarea{
+	padding: 10px;
+	width: 80%;
+}
+
+label{
+	display: block;
+	color: white;
+}
+
+#label{
+	color: white;
+}
+
+p{
+	font: 0.9em Arial, "Trebuchet MS", sans-serif;
+	color: grey;
+}
+
+label.error{
+	display: block;
+	margin: 10px 0px;
+	color: red;
+}
+
+#rcerrorslink{
+	display: none;
+}
+
+.ui-page{
+	background-image: url(images/college-Selector-Background5.jpg);
+
+}
+
+#news{
+	color: #F7931E;
+}
