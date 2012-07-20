@@ -1,27 +1,27 @@
 $(document).ready(function(){
-	$.ajax({
-		"url": "_view/students",
-		"dataType": "json",
-		"success": function(data){
-			$.each(data.rows, function(index, students){
-				var fname = students.value.fname;
-				var lname = students.value.lname;
-				var email = students.value.email;
-				var sex = students.value.sex;
-				var group = students.value.sex;
-				var pop = students.value.pop;
-				var interests = students.value.interests;
-				$('#studentlist').append(
-					$('<li>').append(
-						$('<a>').attr('href', '#displaydata')
-							.text(interests)
-					)
-				);
-			});
-			$('#studentlist').listview('refresh');
-		} 
-	});
-	 var parseProjectForm = function(data) {
+    $.ajax({
+        "url": "_view/students",
+        "dataType": "json",
+        "success": function(data){
+            $.each(data.rows, function(index, students){
+                var fname = students.value.fname;
+                var lname = students.value.lname;
+                var email = students.value.email;
+                var sex = students.value.sex;
+                var group = students.value.group;
+                var pop = students.value.pop;
+                var interests = students.value.interests;
+                $('#studentlist').append(
+                    $('<li>').append(
+                        $('<a>').attr('href', '#displaydata')
+                            	.text(interests)
+                    )
+                );
+            });
+            $('#studentlist').listview('refresh');
+        }
+    });
+     var parseProjectForm = function(data) {
     // Uses form data here...
     console.log(data);
     };
@@ -405,28 +405,29 @@ $(document).ready(function(){
     $("#clear").on('click', clearLocal);
 
     $('#submit').on('click', saveData);
+});
 
 // Extras Page
-	$("#extras").on('pageinit',function(){
+    $("#extras").on('pageinit',function(){
 
-    	$('#json').on('click',function(){
-        	$.ajax({
-            	url: 'data/data.json',
-            	dataType: 'json',
-            	success: function(data){
-                	console.log(data);
-                	alert('Data has been loaded to console!');
-                	$('#databaselist').listview('refresh');                
-            	}
-        	});
-    	});
+        $('#json').on('click',function(){
+            $.ajax({
+                url: 'data/data.json',
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                    alert('Data has been loaded to console!');
+                    $('#databaselist').listview('refresh');                
+                }
+            });
+        });
 
     $('#xml').on('click', function(){
         $.ajax({
             url: 'data/data.xml',
             dataType: 'xml',
             success: function(data){
-            	console.log(data);
+                console.log(data);
                 alert('Data has been loaded to console!');
                 $('#databaselist').listview('refresh');
             }
@@ -441,11 +442,36 @@ $(document).ready(function(){
                 console.log(data);
                 alert('Data has been loaded to console!');
                 $('#databaselist').listview('refresh');
-            	}
-        	});
-    	});
- 	});
+                }
+            });
+        });
+     });
  //Display Data page
- 	$("#displaydata").on('pageinit',function(){
- 	});
-});
+     $("#displaydata").on('pageinit',function(){
+             $.ajax({
+                 "url": "_view/students",
+                "dataType": "json",
+                "success": function(data){
+                    $.each(data.rows, function(index, students){
+                        var fname = students.value.fname;
+                        var lname = students.value.lname;
+                        var email = students.value.email;
+                        var sex = students.value.sex
+                        var group = students.value.group;
+                        var pop = students.value.pop;
+                        var interests = students.value.interests;
+                        $('#studentdata').append(
+                           $('<li>').text(fname),
+                           $('<li>').text(lname),
+                           $('<li>').text(email),
+                           $('<li>').text(sex),
+                           $('<li>').text(group),
+                           $('<li>').text(pop),
+                           $('<li>').text(interests)
+                            		
+                        );
+                    });
+                }
+             });
+             $('#studentdata').listview('refresh');
+         });
