@@ -344,7 +344,7 @@ $(document).ready(function(){
          
  
         //Get Error Messages
-        var messageAry = [];
+        var messageAry = [ ];
          
         // First Name Validation
         if (getFname.val === ""){
@@ -405,21 +405,21 @@ $(document).ready(function(){
     $("#clear").on('click', clearLocal);
 
     $('#submit').on('click', saveData);
-});
 
-$("#extras").on('pageinit',function(){
+// Extras Page
+	$("#extras").on('pageinit',function(){
 
-    $('#json').on('click',function(){
-        $.ajax({
-            url: 'data/data.json',
-            dataType: 'json',
-            success: function(data){
-                console.log(data);
-                alert('Data has been loaded to console!');
-                $('#databaselist').listview('refresh');                
-            }
-        });
-    });
+    	$('#json').on('click',function(){
+        	$.ajax({
+            	url: 'data/data.json',
+            	dataType: 'json',
+            	success: function(data){
+                	console.log(data);
+                	alert('Data has been loaded to console!');
+                	$('#databaselist').listview('refresh');                
+            	}
+        	});
+    	});
 
     $('#xml').on('click', function(){
         $.ajax({
@@ -441,7 +441,11 @@ $("#extras").on('pageinit',function(){
                 console.log(data);
                 alert('Data has been loaded to console!');
                 $('#databaselist').listview('refresh');
-            }
-        });
-    });
+            	}
+        	});
+    	});
+ 	});
+ //Display Data page
+ 	$("#displaydata").on('pageinit',function(){
+ 	});
 });
