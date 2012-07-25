@@ -1,26 +1,6 @@
-$('#home').on('pageinit',function(){
-    $.couch.db('collegeselector').view('plugin/programs',{
-        "success": function(data){
-        	$('#studentlist').empty();
-            $.each(data.rows, function(index, students){
-                var fname = students.value.fname;
-                var lname = students.value.lname;
-                var email = students.value.email;
-                var sex = students.value.sex;
-                var group = students.value.group;
-                var pop = students.value.pop;
-                var interests = students.value.interests;
-                $('#studentlist').append(
-                    $('<li>').append(
-                        $('<a>').attr('href', '#displaydata')
-                            	.text(interests)
-                    )
-                );
-            });
-            $('#studentlist').listview('refresh');
-        }
-    });
-     var parseProjectForm = function(data) {
+$(document).ready(function() {
+    // Site Code...
+    var parseProjectForm = function(data) {
     // Uses form data here...
     console.log(data);
     };
@@ -343,7 +323,7 @@ $('#home').on('pageinit',function(){
          
  
         //Get Error Messages
-        var messageAry = [ ];
+        var messageAry = [];
          
         // First Name Validation
         if (getFname.val === ""){
@@ -406,20 +386,17 @@ $('#home').on('pageinit',function(){
     $('#submit').on('click', saveData);
 });
 
-// Extras Page
-    $("#extras").on('pageinit',function(){
+$("#extras").on('pageinit',function(){
 
-        $('#json').on('click',function(){
-            $.ajax({
-                url: 'data/data.json',
-                dataType: 'json',
-                success: function(data){
-                    console.log(data);
-                    alert('Data has been loaded to console!');
-                    $('#databaselist').listview('refresh');                
-                }
-            });
+    $('#json').on('click',function(){
+        $.ajax({
+            url: 'data/data.json',
+            dataType: 'json',
+            success: function(data){
+                console.log(data);                
+            }
         });
+    });
 
     $('#xml').on('click', function(){
         $.ajax({
@@ -427,8 +404,6 @@ $('#home').on('pageinit',function(){
             dataType: 'xml',
             success: function(data){
                 console.log(data);
-                alert('Data has been loaded to console!');
-                $('#databaselist').listview('refresh');
             }
         });
     });
@@ -439,37 +414,14 @@ $('#home').on('pageinit',function(){
             dataType: 'csv',
             success: function(data) {
                 console.log(data);
-                alert('Data has been loaded to console!');
-                $('#databaselist').listview('refresh');
-                }
-            });
+            }
         });
-     });
- //Display Data page
-     $("#displaydata").on('pageinit',function(){
-    	 $.couch.db('collegeselector').view('plugin/programs',{
-                "success": function(data){
-                	$('#studentdata').empty();
-                    $.each(data.rows, function(index, students){
-                        var fname = students.value.fname;
-                        var lname = students.value.lname;
-                        var email = students.value.email;
-                        var sex = students.value.sex
-                        var group = students.value.group;
-                        var pop = students.value.pop;
-                        var interests = students.value.interests;
-                        $('#studentdata').append(
-                           $('<li>').text(fname),
-                           $('<li>').text(lname),
-                           $('<li>').text(email),
-                           $('<li>').text(sex),
-                           $('<li>').text(group),
-                           $('<li>').text(pop),
-                           $('<li>').text(interests)
-                            		
-                        );
-                    });
-                }
-             });
-             $('#studentdata').listview('refresh');
-         });
+    });
+
+});
+
+
+
+
+
+
