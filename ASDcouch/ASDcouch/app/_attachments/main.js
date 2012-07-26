@@ -1,7 +1,7 @@
 $('#home').on('pageinit',function(){
-    $.couch.db('collegeselector').view('plugin/programs',{
+    $.couch.db('collegeselector').view('collegeselector/students',{
         "success": function(data){
-        	$('#studentlist').empty();
+        	//console.log(data);
             $.each(data.rows, function(index, students){
                 var fname = students.value.fname;
                 var lname = students.value.lname;
@@ -12,14 +12,16 @@ $('#home').on('pageinit',function(){
                 var interests = students.value.interests;
                 $('#studentlist').append(
                     $('<li>').append(
-                        $('<a>').attr('href', '#displaydata')
-                            	.text(interests)
+                        $('<a>').attr('href', 'students.html?students=' + lname + fname)
+                                .text(interests)
                     )
                 );
+                
             });
             $('#studentlist').listview('refresh');
         }
     });
+});
      var parseProjectForm = function(data) {
     // Uses form data here...
     console.log(data);
@@ -87,7 +89,6 @@ $('#home').on('pageinit',function(){
         create += '</select>';
         $('#select').append($(create));
     };
-    console.log(ranges);
 
     //Find Value of selected radio button
     function getSelectedRadio () {
@@ -98,7 +99,6 @@ $('#home').on('pageinit',function(){
             };
         };
     };
-    console.log(getSelectedRadio);
 
     //Find Value of selected checkbox
     function getCheckbox () {
@@ -109,7 +109,6 @@ $('#home').on('pageinit',function(){
             };
         };
     };
-    console.log(getCheckbox);
 
     function saveData (key) {
     
@@ -146,7 +145,6 @@ $('#home').on('pageinit',function(){
         localStorage.setItem(id, JSON.stringify(item));
         alert("Information Saved!");
     };
-    console.log(saveData);
 
     //Auto Populate Local Storage
     function autoFillData () {
@@ -157,7 +155,6 @@ $('#home').on('pageinit',function(){
             localStorage.setItem(id, JSON.stringify(json[c]));
         };
     };
-    console.log(autoFillData);
     
     // get the image for the right category being displayed
     function getImage (iconName, makeSubList) {
@@ -169,6 +166,31 @@ $('#home').on('pageinit',function(){
      };
     // displayLink(localStorage);
      
+   //Make Item Links
+     //Create the edit and delete links for each stored item when displayed.
+     function makeItemLinks (key, linksli) {
+         //Edit single item link
+         var editLink = $("<a/>");
+             editLink.href = '#';
+         editLink.key = key;
+         var editText = "Edit Information";
+         editLink.on('click', editItem);
+         editLink.html = editText;
+         linksli.append($(editLink));
+  
+         //Add line break
+         var breakTag = $('<br/>');
+         linksli.append($(breakTag));
+  
+         var deleteLink = $('<a/>');
+             deleteLink.href = '#';
+         deleteLink.key = key;
+         var deleteText = "Delete Information";
+         deleteLink.on('click', deleteItem);    
+         deleteLink.html = "Delete Text";
+         linksli.append($(deleteLink));
+     };
+        
 
     function getData () {
        // toggleControls("on");
@@ -231,30 +253,6 @@ $('#home').on('pageinit',function(){
             makeItemLinks(localStorage.key(i), linksli ); // Create our edit and delete links/buttons for each item in local storage.
         };
     
-    //Make Item Links
-    //Create the edit and delete links for each stored item when displayed.
-    function makeItemLinks (key, linksli) {
-        //Edit single item link
-        var editLink = $("<a/>");
-            editLink.href = '#';
-        editLink.key = key;
-        var editText = "Edit Information";
-        editLink.on('click', editItem);
-        editLink.html = editText;
-        linksli.append($(editLink));
- 
-        //Add line break
-        var breakTag = $('<br/>');
-        linksli.append($(breakTag));
- 
-        var deleteLink = $('<a/>');
-            deleteLink.href = '#';
-        deleteLink.key = key;
-        var deleteText = "Delete Information";
-        deleteLink.on('click', deleteItem);    
-        deleteLink.html = "Delete Text";
-    };
-        linksli.append($(deleteLink));
  
     
     function editItem () {
@@ -404,7 +402,6 @@ $('#home').on('pageinit',function(){
     $("#clear").on('click', clearLocal);
 
     $('#submit').on('click', saveData);
-});
 
 // Extras Page
     $("#extras").on('pageinit',function(){
@@ -414,8 +411,24 @@ $('#home').on('pageinit',function(){
                 url: 'data/data.json',
                 dataType: 'json',
                 success: function(data){
-                    console.log(data);
+                    //console.log(data);
                     alert('Data has been loaded to console!');
+                    $.each(data.rows, function(index, students){
+                        var fname = students.value.fname;
+                        var lname = students.value.lname;
+                        var email = students.value.email;
+                        var sex = students.value.sex;
+                        var group = students.value.group;
+                        var pop = students.value.pop;
+                        var interests = students.value.interests;
+                        $('#databaselist').append(
+                                $('<li>').append(
+                                    $('<a>').attr('href', '#displaydata')
+                                            .text(interests)
+                                )
+                            );
+                            
+                        });
                     $('#databaselist').listview('refresh');                
                 }
             });
@@ -446,15 +459,18 @@ $('#home').on('pageinit',function(){
         });
      });
  //Display Data page
-     $("#displaydata").on('pageinit',function(){
-    	 $.couch.db('collegeselector').view('plugin/programs',{
+     $('#students').on('pageinit',function(){
+    	 var urlData = $(this).data("url");
+    	 console.log('urlData');
+     });
+    	 /*
+         $.couch.db('collegeselector').view('collegeselector/students',{
                 "success": function(data){
-                	$('#studentdata').empty();
-                    $.each(data.rows, function(index, students){
+                     $.each(data.rows, function(index, students){
                         var fname = students.value.fname;
                         var lname = students.value.lname;
                         var email = students.value.email;
-                        var sex = students.value.sex
+                        var sex = students.value.sex;
                         var group = students.value.group;
                         var pop = students.value.pop;
                         var interests = students.value.interests;
@@ -466,10 +482,11 @@ $('#home').on('pageinit',function(){
                            $('<li>').text(group),
                            $('<li>').text(pop),
                            $('<li>').text(interests)
-                            		
+                                    
                         );
                     });
                 }
              });
              $('#studentdata').listview('refresh');
-         });
+             */
+       

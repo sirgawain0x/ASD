@@ -2,601 +2,601 @@
     {
         "interest1": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Mark"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Robinson"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "m.robinson@aol.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Male"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "B: 3.4 - 2.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Small"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Welding, Astronaut, Accounting"
             ]
         },
         "interest2": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Sandra"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Williams"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "truthis@gmail.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Female"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "A: 4.0 - 3.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Large"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Teaching, Cinematography, Law"
             ]
         },
         "interest3": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Brian"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Moore"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "teamphilly@me.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Male"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "D: 1.4 - 1.0"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Medium"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Medical, Business Administration, Game Design"
             ]
         },
         "interest4": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Blake"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Griffin"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "saveme@gmail.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Male"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "C: 2.4 - 1.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Medium"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Law Enforcement, Business Administration, Mobile Development"
             ]
         },
         "interest5": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Myra"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Ray"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "rayoflight@aol.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Female"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "B: 3.4 - 2.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Large"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Business Data Processing"
             ]
         },
         "interest6": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Billy"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Goldstein"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "digforgold@mac.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Male"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "A: 4.0 - 3.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize:",
                 "Large"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Computer Engineering"
             ]
         },
         "interest7": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Danielle"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Williams"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "pixiedust@yahoo.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Female"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "A: 4.0 - 3.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Small"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Marketing, Marketing Management"
             ]
         },
         "interest8": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Wilbur"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Meng"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "muse783@netscpae.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Male"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "D: 1.4 - 1.0"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Medium"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Information Sciences and Systems"
             ]
         },
         "interest9": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Simon"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Villani"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "sim0ntheman@gmail.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Male"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "C: 2.4 - 1.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Large"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Mathematician"
             ]
         },
         "interest10": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Seaterra"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Mandel"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "skyisthelimit@gmail.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Female"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "B: 3.4 - 2.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Large"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Economics, Finance"
             ]
         },
         "interest11": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Adrian"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Kline"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "bigpond@aol.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Male"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "B: 3.4 - 2.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Medium"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Business Administration, Management"
             ]
         },
         "interest12": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Sonya"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "McAfee"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "beatclub@bellsouth.net"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Female"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "A: 4.0 - 3.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Small"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Computer Science"
             ]
         },
         "interest13": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Andre"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Wright"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "wrightbros@penup.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Male"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "D: 1.4 - 1.0"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Medium"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Electrical Engineering"
             ]
         },
         "interest14": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Carl"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Thomas"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "melodiesfr0mheaven@gmail.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Male"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "C: 2.4 - 1.5"
             ],
             "pop": [
-                "Campus Size:",
+                "Campus Size",
                 "Medium"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Mechanical Engineering"
             ]
         },
         "interest15": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Melodie"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Cartwright"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "ladywithattitude@me.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Female"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "B: 3.4 - 2.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Large"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Accounting"
             ]
         },
         "interest16": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Abel"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Cheng"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "oodleofnoodle@mac.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Male"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "A: 4.0 - 3.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Small"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Scientist"
             ]
         },
         "interest17": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Kara"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Corker"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "karacola@verizon.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Female"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "A: 4.0 - 3.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Small"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "liberal Arts"
             ]
         },
         "interest18": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Wesley"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Snipes"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "bladeinfinity2025@gmail.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Male"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "D: 1.4 - 1.0"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Large"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Communications"
             ]
         },
         "interest19": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Dean"
             ],
             "lname": [
-                "Last Name:",
+                "LastName",
                 "Marnova"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "thadeanster@me.com"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Male"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "C: 2.4 - 1.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Medium"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "agriculture, natural resources"
             ]
         },
         "interest20": {
             "fname": [
-                "First Name:",
+                "FirstName",
                 "Anna"
             ],
             "lname": [
-                "Last Name:",
+                "LastName:",
                 "Riley"
             ],
             "email": [
-                "Email:",
+                "Email",
                 "sweetandmean2896@comcast.net"
             ],
             "sex": [
-                "Sex:",
+                "Sex",
                 "Female"
             ],
             "group": [
-                "GPA:",
+                "GPA",
                 "B: 3.4 - 2.5"
             ],
             "pop": [
-                "Campus Size:",
+                "CampusSize",
                 "Small"
             ],
             "interests": [
-                "Interest(s):",
+                "Interest(s)",
                 "Graphic Design, Visual Arts, Intermedia/Multimedia"
             ]
         }
