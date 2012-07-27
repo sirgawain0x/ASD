@@ -1,4 +1,4 @@
-$('#home').on('pageinit',function(){
+$('#home').live('pageshow',function(){
     $.couch.db('collegeselector').view('collegeselector/students',{
         "success": function(data){
         	//console.log(data);
@@ -459,11 +459,29 @@ $('#home').on('pageinit',function(){
         });
      });
  //Display Data page
-     $('#students').on('pageinit',function(){
-    	 var urlData = $(this).data("url");
-    	 console.log('urlData');
-     });
-    	 /*
+    
+    var urlVars = function(){
+        var urlData = $($.mobile.activePage).data('url');
+        var urlParts = urlData.split("?");
+        var urlPairs = urlParts[1].split('&');
+        var urlValues ={};
+        for (var pair in urlPairs) {
+            var keyValue = urlPairs[pair].split('=');
+            var key = decodeURIComponent(keyValue[0]);
+            var value = decodeURIComponent(keyValue[1]);
+            urlValues[key] = value;
+        }
+        return(urlValues);
+    };
+    
+    $('#students').live('pageshow',function(){
+        var students = urlVars()['students'];
+        //console.log(students);
+        $.couch.db("collegeselector").view("collegeselector/college",{
+            key: 'students:' + students
+        });
+    }); 
+   /*
          $.couch.db('collegeselector').view('collegeselector/students',{
                 "success": function(data){
                      $.each(data.rows, function(index, students){
@@ -489,4 +507,5 @@ $('#home').on('pageinit',function(){
              });
              $('#studentdata').listview('refresh');
              */
+ 
        
