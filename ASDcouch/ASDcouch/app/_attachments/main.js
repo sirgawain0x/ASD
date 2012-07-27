@@ -133,38 +133,20 @@ $('#home').live('pageshow',function(){
         getSelectedRadio();
         getCheckbox();
         var item        = {};
-            item.fname  = ["First Name:", $('fname').value];
-            item.lname  = ["Last Name:", $('lname').value];
-            item.email  = ["Email:", $('email').value];
+            item.fname  = ["First Name:", $('fname').val];
+            item.lname  = ["Last Name:", $('lname').val];
+            item.email  = ["Email:", $('email').val];
             item.sex    = ["Sex:", sexValue];
-            item.group  = ["Group:", $('groups').value];
+            item.group  = ["Group:", $('groups').val];
             item.pop    = ["Campus Size:", sizeValue];
-            item.interests =["Interests:", $('comments').value];
+            item.interests =["Interests:", $('comments').val];
+            
+            
              
         //Save data into local storage; Use stringify to convert object to string.
         localStorage.setItem(id, JSON.stringify(item));
         alert("Information Saved!");
     };
-
-    //Auto Populate Local Storage
-    function autoFillData () {
-        // The actual actual JSON OBJECT data required for this to work is coming from out JSON.js file which is loaded to out HTML page.
-        // Store the JSON Object into local storage.
-        for(var c in json){
-            var id   = Math.floor(Math.random()* 10000001);
-            localStorage.setItem(id, JSON.stringify(json[c]));
-        };
-    };
-    
-    // get the image for the right category being displayed
-    function getImage (iconName, makeSubList) {
-        var imageLi = $('<li/>');
-        makeSubList.append($(imageLi));
-        var newImg = $('<img/>');
-        var setSrc = newImg.attr('src', "images/icons"+ iconName +".png");
-        imageLi.append($(newImg));
-     };
-    // displayLink(localStorage);
      
    //Make Item Links
      //Create the edit and delete links for each stored item when displayed.
@@ -404,16 +386,16 @@ $('#home').live('pageshow',function(){
     $('#submit').on('click', saveData);
 
 // Extras Page
-    $("#extras").on('pageinit',function(){
+   /*$("#extras").on('pageinit',function(){
 
         $('#json').on('click',function(){
             $.ajax({
                 url: 'data/data.json',
                 dataType: 'json',
                 success: function(data){
-                    //console.log(data);
+                    console.log(data);
                     alert('Data has been loaded to console!');
-                    $.each(data.rows, function(index, students){
+                   /* $.each(data.rows, function(index, students){
                         var fname = students.value.fname;
                         var lname = students.value.lname;
                         var email = students.value.email;
@@ -429,20 +411,35 @@ $('#home').live('pageshow',function(){
                             );
                             
                         });
+                        
                     $('#databaselist').listview('refresh');                
                 }
             });
         });
-
+       
     $('#xml').on('click', function(){
         $.ajax({
+        	type: "GET"
             url: 'data/data.xml',
             dataType: 'xml',
             success: function(data){
                 console.log(data);
-                alert('Data has been loaded to console!');
-                $('#databaselist').listview('refresh');
+            	/*$.each(data.rows,function(){
+            		var fname = students.value.fname;
+                    var lname = students.value.lname;
+                    var email = students.value.email;
+                    var sex = students.value.sex;
+                    var group = students.value.group;
+                    var pop = students.value.pop;
+                    var interests = students.value.interests;
+                    $('<div class="items" id="link_'+id+'"></div>')
+					.html('<a href="'+type+'">'+type+'</a>')
+					.appendTo('#databaselist');
             }
+        });
+     
+                $('#databaselist').listview('refresh'); 
+    };
         });
     });
 
@@ -456,9 +453,10 @@ $('#home').live('pageshow',function(){
                 $('#databaselist').listview('refresh');
                 }
             });
+        $('#databaselist').listview('refresh');
         });
-     });
- //Display Data page
+    */
+ //Display Students page
     
     var urlVars = function(){
         var urlData = $($.mobile.activePage).data('url');
